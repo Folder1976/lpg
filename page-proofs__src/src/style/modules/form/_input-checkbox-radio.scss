@@ -1,0 +1,111 @@
+.check,
+.radio {
+  padding-left: 1.2em;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  &__box {
+    position: absolute;
+    margin-top: 0.25em;
+    margin-left: -1em;
+    width: 0.6em;
+    height: 0.6em;
+    overflow: hidden;
+    border-radius: 0.05em;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    box-shadow: 0 0 0 0.1em $color_checkbox_border;
+  }
+}
+
+.radio__box {
+  border-radius: 50%;
+}
+
+/* Checked */
+.check__input:checked + .check__box,
+.radio__input:checked + .radio__box {
+  background-color: $color_checkbox_border;
+  background-image: url(../img/form/check.svg);
+}
+
+/* Focused */
+.check__input:focus + .check__box,
+.radio__input:focus + .radio__box {
+  box-shadow:
+    0 0 0 0.1em $color_checkbox_border,
+    0 0 0 0.2em $color_checkbox_focus;
+}
+
+/* Disabled */
+.check__input:disabled + .check__box,
+.radio__input:disabled + .radio__box {
+  box-shadow: 0 0 0 0.1em $color_checkbox_border_disable;
+}
+
+.check__input:checked:disabled + .check__box,
+.radio__input:checked:disabled + .radio__box {
+  background-color: $color_checkbox_border_disable;
+}
+
+
+// Если чекбокс и радио по дизайну сильно отличаются, то стили для радио
+// можно записать отдельно:
+// .radio {
+//   padding-left: 1.2em;
+//   cursor: pointer;
+
+//   &__input {
+//     position: absolute;
+//     width: 1px;
+//     height: 1px;
+//     overflow: hidden;
+//     clip: rect(0 0 0 0);
+//   }
+
+//   &__box {
+//     position: absolute;
+//     margin-top: 0.25em;
+//     margin-left: -1em;
+//     width: 0.6em;
+//     height: 0.6em;
+//     overflow: hidden;
+//     border-radius: 50%;
+//     background-color: #fff;
+//     background-repeat: no-repeat;
+//     background-position: 50% 50%;
+//     box-shadow: 0 0 0 0.1em $color_checkbox_border;
+//   }
+// }
+
+//  Checked 
+// .radio__input:checked + .radio__box {
+//   background-color: $color_checkbox_border;
+//   background-image: url(../img/form/check.svg);
+// }
+
+// /* Focused */
+// .radio__input:focus + .radio__box {
+//   box-shadow:
+//     0 0 0 0.1em $color_checkbox_border,
+//     0 0 0 0.2em $color_checkbox_focus;
+// }
+
+// /* Disabled */
+// .radio__input:disabled + .radio__box {
+//   box-shadow: 0 0 0 0.1em $color_checkbox_border_disable;
+// }
+
+// .radio__input:checked:disabled + .radio__box {
+//   background-color: $color_checkbox_border_disable;
+// }
+
+

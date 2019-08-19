@@ -1,0 +1,12 @@
+%section--vertical-middle {
+  display: flex;
+  align-items: center;
+}
+
+.section {
+  // padding: 50px 0;
+  position: relative;
+  min-height: 500px;
+  object-position: 50% 50%;
+}
+

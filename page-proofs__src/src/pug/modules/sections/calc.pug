@@ -1,0 +1,64 @@
+section#calc.section.s-calc
+  .container
+    h2.section-title.wow.fadeInUp Зачем Вам ГБО?
+    .section-subtitle.wow.fadeInUp Начнем с рассчета окупаемости
+
+    .s-calc__row.wow.fadeInUp
+      .s-calc__col-left
+        form.form.s-calc__form.js-calc-form(action="")
+          .form__row
+            .form__row-title.form-row-title
+              .form-row-title__num 1
+              .form-row-title__text Введите данные
+            .form__group.form__group--inline
+              input.form__control(type="text" name="gasoline-consumption" value="" placeholder="Расход бензина на 100 км")
+              input.form__control(type="text" name="mileage" value="" placeholder="Пробег автомобиля за сутки")
+
+          .form__row
+            .form__row-title.form-row-title
+              .form-row-title__num 2
+              .form-row-title__text Выберите кол-во цилиндров
+            .form__group.form__group--inline
+              select.custom-select.js-custom-select(name="cylinders")
+                option(value="4") 4 цилиндра
+                option(value="5") 5 цилиндров
+                option(value="6") 6 цилиндров
+                option(value="7") 7 цилиндров
+                option(value="8") 8 цилиндров
+
+              select.custom-select.js-custom-select(name="engine-power")
+                option(value="0") Мощность двигателя
+                option(value="1000") 1000
+                option(value="1100") 1100
+                option(value="1200") 1200
+                option(value="1300") 1300
+                option(value="1400") 1400
+                option(value="1500") 1500
+                option(value="1600") 1600
+
+          .form__row
+            button.bbtn.js-calc Рассчитать стоимость
+
+
+      .s-calc__col-right
+        .s-calc__result.s-calc-result
+          .s-calc-result__econom-list
+            .s-calc-result-econom
+              .s-calc-result-econom__title Экономия:
+              .s-calc-result-econom__number 1296
+              .s-calc-result-econom__unit ₽/мес
+            .s-calc-result-econom
+              .s-calc-result-econom__title Окупаемость:
+              .s-calc-result-econom__number 10
+              .s-calc-result-econom__unit месяцев
+
+          .s-calc-result__total.s-calc-result-total
+            .s-calc-result-total__title Вам отлично подойдёт:
+            .s-calc-result-total__text Комплект Alpha M 4 цил. ( эл.к-т Alpha M-4 / AT09 Alaska / IG7 Alpha LP)
+            .s-calc-result-total__sum 17 000 руб
+
+          form.s-calc-result__form.s-calc-result-form(action="")
+            .form__group.form__group--inline
+              input.form__control.form__control--white.s-calc-result-form__input(type="text" placeholder="Ваш номер телефона")
+              button.s-calc-result-form__btn.bbtn.bbtn--white Заказать консультацию
+

@@ -1,0 +1,62 @@
+.group-input {
+  display: flex;
+  // width: 100%;
+}
+
+.form-control {
+  background: #FFFFFF;
+  border-radius: 5px;
+  border: none;
+  padding: 15px 26px;
+  font-family: $global_ff2;
+  font-size: 18px;
+  line-height: 25px;
+
+  @media screen and (max-width: $break_md) {
+    padding: 12px 20px;
+  }
+
+  @media screen and (max-width: $break_sm) {
+    padding: 10px 15px;
+  }
+
+  &--w100 {
+    width: 100%;
+  }
+}
+
+.input-copy {
+  position: relative;
+  width: 100%;
+
+  .input {
+    padding-right: 50px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 22px;
+    fill: #ABABAB;
+    transition: all .3s;
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    cursor: pointer;
+
+    &:hover {
+      .icon {
+        fill: $primary_color;
+      }
+    }
+  }
+}

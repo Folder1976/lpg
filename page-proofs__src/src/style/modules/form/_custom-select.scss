@@ -1,0 +1,97 @@
+.custom-select-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  font-size: 18px;
+  line-height: 1.56em;
+
+  @media screen and (max-width: $break_lg) {
+    font-size: 14px;
+  }
+}
+
+.custom-select-container * {
+  box-sizing: border-box;
+}
+.custom-select-container.is-disabled {
+  opacity: .333;
+}
+.custom-select-opener {
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: .4em 0;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: relative;
+
+  height: 46px;
+  background: transparent;
+
+  &:after {
+    content: "";
+    transition: all .3s;
+    position: absolute;
+    top: 0.5em;
+    right: 12px;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(45deg);
+
+    .is-open & {
+      transform: rotate(225deg);
+    }
+  }
+}
+
+
+.custom-select-container select {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.custom-select-panel {
+  max-height: 0;
+  transition: max-height .5s ease-out, overflow-y 0.1s 0.5s;
+  overflow: hidden;
+  background-color: #fff;
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+.custom-select-container.is-open .custom-select-panel {
+  max-height: 10.7em;
+  overflow-y: auto
+}
+.custom-select-option {
+  padding: 0.5em 20px;
+  cursor: pointer;
+}
+.custom-select-option.has-focus {
+  background-color: rgba(0, 167, 160, 0.2);
+  // color: #00A7A0;
+}
+.custom-select-option.is-selected { //::before {
+  // content: "✔";
+  background-color: rgba(0, 167, 160, 0.2);
+  color: #00A7A0;
+}
+.custom-select-optgroup > .custom-select-option {
+  padding-left: 2em;
+}
+.custom-select-optgroup::before {
+  content: attr(data-label);
+  display: block;
+  padding: 0.5em;
+  color: #888;
+}

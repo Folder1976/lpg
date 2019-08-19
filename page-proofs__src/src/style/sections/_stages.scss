@@ -1,0 +1,147 @@
+.s-stages {
+  @extend %section--vertical-middle;
+  min-height: 100vh;
+  padding: 170px 0 80px;
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  @media screen and (max-width: $break_lg) {
+    min-height: auto;
+    padding: 90px 0 80px;
+  }
+
+  .no-webp & {
+    background-image: url(../img/bg/1920/bg-man-check.png);
+
+    @media screen and (max-width: $break_lg) {
+      background-image: url(../img/bg/1366/bg-man-check.png);
+    }
+
+    @media screen and (max-width: $break_xs) {
+      background-image: none;
+    }
+  }
+
+  .webp & {
+    background-image: url(../img/bg/1920/bg-man-check.webp);
+
+    @media screen and (max-width: $break_lg) {
+      background-image: url(../img/bg/1366/bg-man-check.webp);
+    }
+
+    @media screen and (max-width: $break_xs) {
+      background-image: none;
+    }
+  }
+
+  p {
+    font-size: 24px;
+
+    @media screen and (max-width: $break_lg) {
+      font-size: 14px;
+    }
+  }
+}
+
+.s-stages__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.33em;
+
+  @media screen and (max-width: $break_lg) {
+    font-size: 14px;
+  }
+}
+
+.s-stages__docs {
+  margin-top: 70px;
+  max-width: 600px;
+
+  @media screen and (max-width: $break_lg) {
+    margin-top: 30px;
+    max-width: 530px;
+  }
+
+  & > *:not(:last-child) {
+    margin-bottom: 33px;
+  }
+}
+
+.s-stages__images {
+
+  & > *:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.s-stages__btn-wrap {
+  @media screen and (max-width: $break_xs) {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+.s-stages-list {
+  display: flex;
+  padding: 60px 0;
+
+  @media screen and (max-width: $break_lg) {
+    padding: 30px 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 45px;
+
+    &--mob-hidden {
+      @media screen and (max-width: $break_sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__num {
+    @extend %gradient-border-radius;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 48px;
+    color: #00A7A0;
+    text-align: center;
+    margin-right: 18px;
+    flex: 0 0 50px;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.6em;
+
+    @media screen and (max-width: $break_lg) {
+      font-size: 14px;
+    }
+  }
+}
+
+.s-stages-list--mob {
+  display: none;
+  padding: 40px 0;
+
+  @media screen and (max-width: $break_sm) {
+    display: block;
+  }
+
+  .s-stages-list__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+

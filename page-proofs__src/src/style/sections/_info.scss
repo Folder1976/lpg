@@ -1,0 +1,65 @@
+.s-info {
+  @extend %section--vertical-middle;
+  min-height: 100vh;
+  padding: 100px 0 100px;
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  @media screen and (max-width: $break_md) {
+    min-height: auto;
+  }
+
+  @media screen and (max-width: $break_sm) {
+    background-image: none;
+    padding: 60px 0 40px;
+  }
+
+  .no-webp & {
+    background-image: url(../img/bg/1920/bg-motor.png);
+
+    @media screen and (max-width: $break_lg) {
+      background-image: url(../img/bg/1366/bg-motor.png);
+    }
+
+    @media screen and (max-width: $break_sm) {
+      background-image: none;
+    }
+  }
+
+  .webp & {
+    background-image: url(../img/bg/1920/bg-motor.webp);
+
+    @media screen and (max-width: $break_lg) {
+      background-image: url(../img/bg/1366/bg-motor.webp);
+    }
+
+    @media screen and (max-width: $break_sm) {
+      background-image: none;
+    }
+  }
+}
+
+.s-info__text {
+  max-width: 670px;
+  margin: 50px 0;
+
+  p {
+    font-size: 24px;
+    line-height: 1.33em;
+    color: #000A25;
+    margin-top: 0;
+    margin-bottom: 32px;
+
+    @media screen and (max-width: $break_lg) {
+      font-size: 18px;
+    }
+  }
+}
+
+.s-info__btn {
+  @media screen and (max-width: $break_sm) {
+    text-align: center;
+  }
+}

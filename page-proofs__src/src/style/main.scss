@@ -1,0 +1,198 @@
+@import './utils/_fonts';
+@import './utils/_vars';
+@import './utils/_smart-grid';
+@import './utils/_extension';
+@import './utils/_mixins';
+@import './utils/_libs';
+
+
+html {
+  font-size: 10px;
+
+  // @media screen and (max-width: $break_md) {
+  //   font-size: 9px;
+  // }
+
+  // @media screen and (max-width: $break_sm) {
+  //   font-size: 8.5px;
+  // }
+
+  // @media screen and (max-width: $break_xs) {
+  //   font-size: 8px;
+  // }
+}
+
+body {
+  font-family: $global_ff1;
+  font-size: 1.4rem;
+  color: $color_text;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 80px;
+  line-height: 1.225em;
+  color: $primary_color;
+}
+h2 {
+  font-size: 40px;
+  line-height: 1.35em;
+}
+h3 {
+  font-size: 28px;
+  line-height: 1.43em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  border-style: none;
+  height: auto;
+}
+%img--cover {
+  object-fit: cover;
+  max-width: none;
+  overflow: hidden;
+}
+.img--cover {
+  @extend %img--cover;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+a {
+  transition: all .3s;
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.link {
+  font-size: 24px;
+  font-weight: 700;
+  color: $primary_color;
+  text-decoration: none;
+
+  @media screen and (max-width: $break_lg) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p {
+  color: $color_text;
+  font-size: 1.8rem;
+  line-height: 1.33em;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $primary_color;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  &__header {}
+  &__content {
+    flex-grow: 1;
+  }
+  &__footer {}
+}
+
+
+.container {
+  @include wrapper();
+  width: 100%;
+}
+
+.row {
+  @include row-flex();
+}
+
+.col-12 {
+  @include col();
+  @include size(12);
+}
+
+.col-6 {
+  @include col();
+  @include size(6);
+  @include size-sm(12);
+}
+
+// .col-10-center {
+//   @include col();
+//   @include shift(1);
+//   @include shift-lg(0);
+//   @include size(10);
+//   @include size-lg(12);
+// }
+
+// .col-8-center {
+//   @include col();
+//   @include shift(2);
+//   @include shift-md(0);
+//   @include size(8);
+//   @include size-md(12);
+// }
+
+
+
+
+// pngSprite
+// [class*="ico-"] {
+//   display: inline-block;
+//   vertical-align: middle;
+// }
+// @import './utils/sprite';
+// @include sprites($spritesheet-sprites);
+
+
+
+
+
+
+// Модули
+@import "./modules/_modules";
+
+// Секции
+@import './sections/_top';
+@import './sections/_info';
+@import './sections/_calc';
+@import './sections/_registration';
+@import './sections/_stages';
+@import './sections/_reviews';
+@import './sections/_recommend';
+@import './sections/_contact';
+
+/******************** СТРАНИЦЫ ********************/
+// Главная страница
+@import './pages/index/_index';
+

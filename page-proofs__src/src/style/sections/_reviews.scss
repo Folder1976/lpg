@@ -1,0 +1,78 @@
+.s-reviews {
+  @extend %section--vertical-middle;
+  min-height: 100vh;
+  padding: 100px 0 100px;
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  @media screen and (max-width: $break_sm) {
+    padding: 40px 0 40px;
+    min-height: auto;
+    background-image: none;
+  }
+
+  .no-webp & {
+    background-image: url(../img/bg/1920/bg-cars.png);
+
+    @media screen and (max-width: $break_lg) {
+      background-image: url(../img/bg/1366/bg-cars.png);
+    }
+
+    @media screen and (max-width: $break_sm) {
+      background-image: none;
+    }
+  }
+
+  .webp & {
+    background-image: url(../img/bg/1920/bg-cars.webp);
+
+    @media screen and (max-width: $break_lg) {
+      background-image: url(../img/bg/1366/bg-cars.webp);
+    }
+
+    @media screen and (max-width: $break_sm) {
+      background-image: none;
+    }
+  }
+
+  .section-title {
+    @media screen and (max-width: $break_lg) {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+// .s-reviews__col {
+//   @include col();
+//   @include size(6);
+//   @include size-sm(12);
+// }
+
+.s-reviews__content {
+  margin-left: 50px;
+  max-width: 750px;
+  margin-left: auto;
+
+  @media screen and (max-width: $break_lg) {
+    max-width: 600px;
+  }
+
+  @media screen and (max-width: $break_sm) {
+    margin-right: auto;
+  }
+}
+
+.s-reviews__slider {}
+
+
+
+
+
+
+
+
+

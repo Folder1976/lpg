@@ -1,0 +1,66 @@
+section#stages.section.s-stages
+  .container
+    .row
+      .col-12
+        h2.section-title.wow.fadeInUp Этапы работы
+        .s-stages__list.s-stages-list.wow.fadeInUp
+          .s-stages-list__item
+            .s-stages-list__num 1
+            .s-stages-list__text Первичные документы
+          .s-stages-list__item.s-stages-list__item--mob-hidden
+            .s-stages-list__num 2
+            .s-stages-list__text Установка ГБО
+          .s-stages-list__item.s-stages-list__item--mob-hidden
+            .s-stages-list__num 3
+            .s-stages-list__text Оформление в ГИБДД
+
+        .s-stages__title.wow.fadeInUp В офисе партнёра Вы даёте для обработки<br>необходимые документы:
+
+        p.wow.fadeInUp
+          |- Паспорт транспортного средства;<br>
+          |- Паспорт собственника транспортного средства;<br>
+          |- Свидетельство о регистрации транспортного средства.
+        
+        a.link(href="#").wow.fadeInUp Подробнее
+
+        .s-stages-list.s-stages-list--mob
+          .s-stages-list__item
+            .s-stages-list__num 2
+            .s-stages-list__text Установка ГБО
+          .s-stages-list__item
+            .s-stages-list__num 3
+            .s-stages-list__text Оформление в ГИБДД
+
+        .s-stages__docs.wow.fadeInUp
+          .s-stages__title Документы, которые Вы получаете на этом этапе:
+
+          .s-stages__images
+            .slider.js-slider
+              .slider__list
+                picture
+                  source(type="image/webp" data-srcset="./img/foto/doc-1.webp")
+                  img(data-src="./img/foto/doc-1.png", alt="3-4 цилиндра").lazyload
+
+                picture
+                  source(type="image/webp" data-srcset="./img/foto/doc-2.webp")
+                  img(data-src="./img/foto/doc-2.png", alt="6-8 цилиндров").lazyload
+
+                picture
+                  source(type="image/webp" data-srcset="./img/foto/doc-1.webp")
+                  img(data-src="./img/foto/doc-1.png", alt="3-4 цилиндра").lazyload
+
+                picture
+                  source(type="image/webp" data-srcset="./img/foto/doc-1.webp")
+                  img(data-src="./img/foto/doc-1.png", alt="6-8 цилиндров").lazyload
+
+
+              .slider__arrows
+                .slider__arrow.slider__arrow--prev
+                  +icon('arrow-left', 'slider__arrow-icon')
+                .slider__arrow.slider__arrow--next
+                  +icon('arrow-right', 'slider__arrow-icon')
+
+
+          .s-stages__btn-wrap.wow.fadeInUp
+            a.bbtn(href="#") Заказать установку
+

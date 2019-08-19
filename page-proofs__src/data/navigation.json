@@ -1,0 +1,23 @@
+{
+  "navPages": {
+    "Калькулятор" : {
+      "href": "#calc"
+    },
+
+    "Регистрация" : {
+      "href": "#registration"
+    },
+
+    "Отзывы" : {
+      "href": "#reviews"
+    },
+
+    "ГИС Alpha" : {
+      "href": "#recommend"
+    },
+
+    "Контакты" : {
+      "href": "#contact"
+    }
+  }
+}

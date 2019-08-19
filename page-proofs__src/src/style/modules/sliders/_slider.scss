@@ -1,0 +1,29 @@
+.slider {
+
+  &__arrows {
+    @extend %slider__arrows;
+
+    @media screen and (max-width: $break_xs) {
+      padding: 20px 0 10px;
+      justify-content: center;
+      margin-left: 0;
+    }
+  }
+
+  &__arrow-icon {
+    @extend %slider__arrow-icon;
+  }
+
+  &__arrow {
+    @extend %slider__arrow;
+
+    &--prev {}
+    &--next {}
+  }
+
+  &__list {}
+}
+
+
+
+

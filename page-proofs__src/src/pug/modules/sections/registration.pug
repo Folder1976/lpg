@@ -1,0 +1,47 @@
+section#registration.section.s-registration
+  .container
+    .row
+      .col-6.wow.fadeInUp
+        .s-registration__info.s-registration-info
+          h2.s-registration-info__title Как зарегистрировать и установитьГБО?
+          ol.s-registration-info__list
+            li Выбираем оборудование. Для этого обращаемся либо в отдел установки.
+            li Предоставляем данные на машину в отдел установки для формирования документов на получение разрешительной документации от ГИБДД.
+            li Относим документы и предоставляем автомобиль для осмотра в ГИБДД.
+            li Устанавливаем ГБО.
+            li Получаем разрешение в ГИБДД.
+            li Получаем список документов для регистрации ГБО.
+            li Регистрируем ГБО в ГИБДД.
+
+
+      .col-6.wow.fadeInUp
+        h2.section-title Выглядит сложно?
+        .section-subtitle Сэкономьте массу времени и нервов при<br>регистрации ГБО с нами!
+
+        form.form.s-registration__form.s-registration-form
+          .form__group.form__group--inline
+            input.form__control(type="text" name="name" value="" placeholder="Ваше имя")
+            input.form__control(type="text" name="phone" value="" placeholder="Ваш номер телефона")
+
+          .form__group
+            input.form__control.form__control--w100(type="text" name="model" value="" placeholder="Марка, модель, год выпуска, мощность двигателя")
+
+          .form__group
+            button.bbtn.s-registration-form__submit(type="submit") Оставить заявку
+
+
+    .row
+      .col-12
+        .s-registration__info-bottom.s-registration-info-bottom
+          .s-registration-info-bottom__title.wow.fadeInUp Регистрирую ГБО с нами, Вы получаете преимущемтва:
+          .s-registration-info-bottom__list.wow.fadeInUp
+            .s-registration-info-bottom-list-item
+              +icon('clock', 's-registration-info-bottom-list-item__icon')
+              .s-registration-info-bottom-list-item__text Экономия времени
+            .s-registration-info-bottom-list-item
+              +icon('checklist', 's-registration-info-bottom-list-item__icon')
+              .s-registration-info-bottom-list-item__text Бумаги берем на себя
+            .s-registration-info-bottom-list-item
+              +icon('group', 's-registration-info-bottom-list-item__icon')
+              .s-registration-info-bottom-list-item__text Никаких очередей
+

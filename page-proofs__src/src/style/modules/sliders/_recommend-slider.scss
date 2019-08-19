@@ -1,0 +1,136 @@
+.recommend-slider {
+
+
+  &__arrows {
+    @extend %slider__arrows;
+    padding-top: 15px;
+    max-width: 645px;
+    align-items: center;
+    position: relative;
+
+    @media screen and (max-width: $break_xs) {
+      padding-top: 80px;
+      justify-content: center;
+    }
+  }
+
+  &__arrow-icon {
+    @extend %slider__arrow-icon;
+  }
+
+  &__arrow {
+    @extend %slider__arrow;
+
+    &--prev {}
+    &--next {}
+  }
+
+  &__nav {
+    margin-bottom: 80px;
+
+    @media screen and (max-width: $break_lg) {
+      margin-bottom: 40px;
+    }
+
+    .slick-dots {
+      position: static;
+      text-align: left;
+
+      li {
+        width: auto;
+        height: auto;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.17em;
+        transition: all .3s;
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 50px;
+
+        @media screen and (max-width: $break_lg) {
+          font-size: 18px;
+        }
+
+        @media screen and (max-width: $break_xs) {
+          margin-right: 20px;
+        }
+
+        &.slick-active ,
+        &:hover {
+          text-decoration-line: underline;
+          color: #00A7A0;
+        }
+      }
+    }
+  }
+
+  &__content {
+    padding: 35px 0 0 40px;
+
+    @media screen and (max-width: $break_lg) {
+      padding: 0;
+    }
+  }
+
+  &__foto-list {}
+
+  &__foto-slide {}
+
+  &__text-list {
+    max-width: 645px;
+  }
+
+  &__text-slide {}
+
+  &__download-btn {
+    margin-left: auto;
+
+    @media screen and (max-width: $break_xs) {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+.recommend-slider-foto-slide {
+  margin-bottom: 20px;
+
+  img {
+    margin-left: 0;
+  }
+}
+
+.recommend-slider-text-slide {
+  position: relative;
+
+  &__title {
+    @extend %font-size-40-lg28;
+
+    font-weight: 700;
+    line-height: 1.25em;
+    margin-bottom: 45px;
+
+    @media screen and (max-width: $break_xs) {
+      font-size: 18px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.56em;
+    max-width: 535px;
+
+    @media screen and (max-width: $break_lg) {
+      font-size: 14px;
+    }
+  }
+}
+
+
+

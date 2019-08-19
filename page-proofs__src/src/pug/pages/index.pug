@@ -1,0 +1,34 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Главная страница'
+  - var pageClass = 'index-page'
+
+block content
+
+  <div style="position: absolute; top: -100px;">
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <linearGradient id="svg-gradient-vertical" x2="0" y2="1">
+            <stop offset="0%" stop-color="#00A7A0" />
+            <stop offset="100%" stop-color="#0961B3" />
+        </linearGradient>
+    </svg>
+    <svg id="select-arrow" width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.5171 2.02721L16.5171 2.02719L16.5153 2.02901L8.92964 9.59379L8.92962 9.59377L8.9277 9.59576C8.66053 9.87218 8.21405 9.87236 7.94596 9.59563L7.94597 9.59562L7.94415 9.5938L0.359262 2.02901L0.359282 2.02899L0.357296 2.02709C0.0813923 1.76183 0.0785332 1.31509 0.359262 1.0351L0.359386 1.03498C0.625668 0.768784 1.07641 0.765755 1.35786 1.03602L7.4784 7.15175L7.47805 7.1521L7.48734 7.15998C7.54313 7.20735 7.59291 7.26009 7.64887 7.31941L7.64932 7.31988C7.70327 7.37707 7.76367 7.44109 7.83298 7.49853C7.97942 7.61989 8.16255 7.70947 8.43721 7.70947C8.71194 7.70947 8.89466 7.61984 9.04097 7.49849C9.10936 7.44177 9.16921 7.37857 9.22276 7.32201L9.22503 7.31961C9.28106 7.26045 9.33114 7.20775 9.38739 7.16046L9.38775 7.16088L9.3968 7.15185L15.5298 1.0351L15.5299 1.03498C15.7975 0.76751 16.2468 0.767332 16.5153 1.0351C16.7959 1.31502 16.7933 1.7611 16.5171 2.02721Z" fill="black" stroke="black" stroke-width="0.3"/>
+    </svg>
+  </div>
+
+  include ../modules/mf-popaps
+
+  include ../modules/sections/top
+  include ../modules/sections/info
+  include ../modules/sections/calc
+  include ../modules/sections/registration
+  include ../modules/sections/stages
+  include ../modules/sections/reviews
+  include ../modules/sections/recommend
+  include ../modules/sections/contact
+
+
+block script
+

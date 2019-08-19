@@ -1,0 +1,46 @@
+// Шапка
+@import 'header/_header';
+
+// Футера
+@import 'footer/_footer';
+
+// небольшие модули
+@import '_small-modules';
+
+// Навигация
+@import 'navigation/_navigation';
+
+// Кнопки
+@import 'buttons/_buttons';
+
+// элементы форм (form, input, select, radio, checkbox, texarea)
+@import 'form/_form';
+// @import 'form/_input-text';
+// @import 'form/_input-checkbox-radio';
+// @import 'form/_select';
+@import 'form/_custom-select';
+// @import 'form/_textarea';
+
+// Tabs
+// @import 'tab/_tab';
+
+// Accordion
+// @import 'accordion/_accordion';
+
+// titles
+@import '_titles';
+
+// tables
+// @import 'table/_table';
+
+// sections
+@import '_sections';
+
+// sliders
+@import 'sliders/_sliders-main';
+@import 'sliders/_slider';
+@import 'sliders/_reviews-slider';
+@import 'sliders/_recommend-slider';
+
+// Контент
+@import '_content-style';

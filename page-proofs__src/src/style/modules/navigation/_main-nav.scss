@@ -1,0 +1,139 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-around;
+  font-size: 18px;
+
+  @media screen and (max-width: $break_lg) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: $break_hide-menu) {
+    display: block;
+    font-size: 18px;
+  }
+
+  &__item {
+    margin-right: 40px;
+
+    @media screen and (max-width: $break_lg) {
+      margin-right: 30px;
+    }
+
+    @media screen and (max-width: $break_hide-menu) {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {}
+  }
+
+  &__link {
+    color: #000;
+    text-decoration: none;
+
+    @media screen and (max-width: $break_lg) {
+      padding: 5px 0;
+      display: block;
+    }
+
+    @media screen and (max-width: $break_hide-menu) {
+      padding: 12px 0;
+    }
+
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+      color: $primary_color;
+    }
+
+  }
+}
+
+
+
+.mob-menu__btn {
+  width: 18px;
+  height: 12px;
+  cursor: pointer;
+  transition: all .3s;
+  position: relative;
+
+  &:hover {
+    span {
+      background: $primary_color;
+    }
+  }
+
+  span {
+    display: block;
+    height: 1px;
+    width: 18px;
+    background: $primary_color;
+    position: absolute;
+    z-index: 1;
+    transition: all .2s;
+
+    &:nth-child(1){
+      top: 0;
+    }
+    &:nth-child(2){
+      top: 50%;
+    }
+    &:nth-child(3){
+      top: 100%;
+    }
+  }
+
+  .is-open & {
+    span {
+      &:nth-child(1){
+        transform: rotate(45deg);
+        top: 50%;
+      }
+      &:nth-child(2){
+        display: none;
+      }
+      &:nth-child(3){
+        transform: rotate(-45deg);
+        top: 50%;
+      }
+    }
+
+    & .menu,
+    & + div .menu {
+      display: block;
+    }
+  }
+}
+
+
+// октрыто главное меню
+.mob-menu-is-open {
+  overflow: hidden;
+
+  .header__inner {
+    @media screen and (max-width: $break_hide-menu) {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        z-index: 100;
+      }
+    }
+  }
+
+  .header__menu {
+    display: block;
+    top: 0;
+  }
+}

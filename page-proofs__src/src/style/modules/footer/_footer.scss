@@ -1,0 +1,31 @@
+.s-footer {
+  position: absolute;
+  bottom: 40px;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  height: 0;
+
+  font-size: 14px;
+  line-height: 16px;
+
+  @media screen and (max-width: $break_xs) {
+    text-align: center;
+  }
+
+  &__left {
+    float: left;
+
+    @media screen and (max-width: $break_xs) {
+      float: none;
+    }
+  }
+
+  &__right {
+    float: right;
+
+    @media screen and (max-width: $break_xs) {
+      float: none;
+    }
+  }
+}

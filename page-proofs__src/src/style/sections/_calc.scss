@@ -1,0 +1,200 @@
+.s-calc {
+  @extend %section--vertical-middle;
+  min-height: 100vh;
+  padding: 170px 0 80px;
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  @media screen and (max-width: $break_lg) {
+    min-height: auto;
+    padding: 100px 0 120px;
+  }
+
+  .no-webp & {
+    background-image: url(../img/bg/1920/bg-car-blue.png);
+
+    @media screen and (max-width: $break_lg) {
+      background-image: url(../img/bg/1366/bg-car-blue.png);
+    }
+
+    @media screen and (max-width: $break_xs) {
+      background-image: none;
+    }
+  }
+
+  .webp & {
+    background-image: url(../img/bg/1920/bg-car-blue.webp);
+
+    @media screen and (max-width: $break_lg) {
+      background-image: url(../img/bg/1366/bg-car-blue.webp);
+    }
+
+    @media screen and (max-width: $break_xs) {
+      background-image: none;
+    }
+  }
+
+  .section-subtitle {
+    margin-bottom: 130px;
+
+    @media screen and (max-width: $break_lg) {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.s-calc__text {
+  font-size: 24px;
+  line-height: 1.33em;
+  color: #000;
+  margin-bottom: 130px;
+}
+
+.s-calc__row {
+  @include row-flex();
+}
+
+.s-calc__col-left {
+  @include col();
+  @include size(6);
+  @include size-lg(5);
+  @include size-md(12);
+
+  margin-bottom: 30px;
+}
+
+.s-calc__col-right {
+  @include col();
+  @include size(6);
+  @include size-lg(7);
+  @include size-md(12);
+}
+
+.s-calc__form {
+  max-width: 560px;
+  margin-right: 20px;
+}
+
+.s-calc__result {
+  max-width: 760px;
+  margin: 0 auto;
+  display: none;
+}
+
+
+
+
+.s-calc-result {
+  background: linear-gradient(150.38deg, #0961B3 0%, #00A7A0 118.66%);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 65px 100px;
+
+  @media screen and (max-width: $break_lg) {
+    padding: 40px 50px;
+  }
+
+  @media screen and (max-width: $break_xs) {
+    padding: 20px 15px;
+    margin: 0 -15px;
+  }
+
+  &__econom-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__total {
+    margin-bottom: 30px;
+  }
+
+  &__form {
+    @media screen and (max-width: $break_xs) {
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+.s-calc-result-econom {
+  width: 50%;
+  margin-bottom: 40px;
+  flex: 0 0 50%;
+  padding-right: 30px;
+
+  @media screen and (max-width: $break_xs) {
+    padding-right: 7px;
+  }
+
+  &__title {
+    @extend %font-size-28-lg20;
+
+    font-weight: 700;
+    line-height: 1.14em;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  &__number {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.27em;
+    color: #fff;
+
+    @media screen and (max-width: $break_lg) {
+      font-size: 40px;
+    }
+  }
+
+  &__unit {
+    font-size: 18px;
+    line-height: 1.27em;
+    color: #fff;
+
+    @media screen and (max-width: $break_lg) {
+      font-size: 16px;
+    }
+  }
+}
+
+
+.s-calc-result-total {
+
+  &__title {
+    @extend %font-size-28-lg20;
+
+    font-weight: 700;
+    line-height: 1.14em;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 1.33em;
+    color: #fff;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: $break_lg) {
+      font-size: 18px;
+    }
+  }
+
+  &__sum {
+    @extend %font-size-40-lg28;
+
+    font-weight: 700;
+    line-height: 1.33em;
+    color: #fff;
+  }
+}
+
+.s-calc-result-form {
+
+  &__input {}
+
+  &__btn {}
+}

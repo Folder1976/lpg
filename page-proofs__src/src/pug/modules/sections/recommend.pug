@@ -1,0 +1,41 @@
+section#recommend.section.s-recommend
+  .container
+    h2.section-title.wow.fadeInUp Мы рекомендуем ГИС Alpha 
+    .section-subtitle.wow.fadeInUp Отечественная газовая инжекторная система мирового уровня
+
+    .s-recommend__slider.recommend-slider.js-recommend-slider.row
+      .recommend-slider__nav.col-12.wow.fadeInUp
+
+      .recommend-slider__foto-list.col-6.wow.fadeInUp
+        .recommend-slider__foto-slide.recommend-slider-foto-slide
+          picture
+            source(type="image/webp" media="(max-width: 1366px)" data-srcset="./img/foto/d3d4a64c3a8fbe6b0b4e47e53e8823a3.webp")
+            source(type="image/png" media="(max-width: 1366px)" data-srcset="./img/foto/d3d4a64c3a8fbe6b0b4e47e53e8823a3.png")
+
+            source(type="image/webp" data-srcset="./img/foto/d3d4a64c3a8fbe6b0b4e47e53e8823a3_1920.webp")
+            img(data-src="./img/foto/d3d4a64c3a8fbe6b0b4e47e53e8823a3_1920.png", alt="3-4 цилиндра").lazyload
+
+        .recommend-slider__foto-slide.recommend-slider-foto-slide
+          picture
+            source(type="image/webp" media="(max-width: 1366px)" data-srcset="./img/foto/d3d4a64c3a8fbe6b0b4e47e53e8823a3.webp")
+            source(type="image/png" media="(max-width: 1366px)" data-srcset="./img/foto/d3d4a64c3a8fbe6b0b4e47e53e8823a3.png")
+
+            source(type="image/webp" data-srcset="./img/foto/d3d4a64c3a8fbe6b0b4e47e53e8823a3_1920.webp")
+            img(data-src="./img/foto/d3d4a64c3a8fbe6b0b4e47e53e8823a3_1920.png", alt="3-4 цилиндра").lazyload
+
+
+      .recommend-slider__content.col-6.wow.fadeInUp
+        .recommend-slider__text-list
+          .recommend-slider__text-slide.recommend-slider-text-slide(data-nav-label="3-4 цилиндра")
+            .recommend-slider-text-slide__title ГИС Alpha комплеГИС Alpha комплектация "стандарт", автомобиль 3-4 цилиндрактация
+            .recommend-slider-text-slide__text ГИС Alpha в комплектации "премиум" идеально подходит для автомобилей: с минимальным временем впрыска, с попарно-параллельным впрыском, с впрыском переходящим из распределенного в попарно-параллельный. Фирменная программа Alpha в сочетании с высококачественными форсунками Barracuda превосходный комплект для тех, кто не ищет компромисов.
+          .recommend-slider__text-slide.recommend-slider-text-slide(data-nav-label="6-8 цилиндров")
+            .recommend-slider-text-slide__title 2 ГИС Alpha комплеГИС Alpha комплектация "стандарт", автомобиль 3-4 цилиндрактация
+            .recommend-slider-text-slide__text 2 ГИС Alpha в комплектации "премиум" идеально подходит для автомобилей: с минимальным временем впрыска, с попарно-параллельным впрыском, с впрыском переходящим из распределенного в попарно-параллельный. Фирменная программа Alpha в сочетании с высококачественными форсунками Barracuda превосходный комплект для тех, кто не ищет компромисов.
+
+        .recommend-slider__arrows
+          .recommend-slider__arrow.recommend-slider__arrow--prev
+            +icon('arrow-left', 'recommend-slider__arrow-icon')
+          .recommend-slider__arrow.recommend-slider__arrow--next
+            +icon('arrow-right', 'recommend-slider__arrow-icon')
+          a.recommend-slider__download-btn.bbtn(href="#") Скачать прайс

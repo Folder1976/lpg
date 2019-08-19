@@ -1,0 +1,158 @@
+.s-contact {
+  @extend %section--vertical-middle;
+  min-height: 100vh;
+  padding: 170px 0 80px;
+  position: relative;
+
+  @media screen and (max-width: $break_md) {
+    min-height: auto;
+    padding: 80px 0;
+    display: block;
+  }
+
+  @media screen and (max-width: $break_xs) {
+    padding-bottom: 50px;
+  }
+
+  .section-subtitle {
+    margin-bottom: 50px;
+    max-width: 635px;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 60vw;
+    height: 100%;
+    background-image: linear-gradient(89.46deg, #FFF 70%, rgba(255, 255, 255, 0.5) 85%, rgba(255, 255, 255, 0) 100%);
+
+    @media screen and (max-width: $break_md) {
+      display: none;
+    }
+  }
+
+  &__map {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: $break_md) {
+      position: static;
+      height: 200px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    max-width: 50%;
+    position: relative;
+    z-index: 3;
+
+    @media screen and (max-width: $break_md) {
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  &__form {
+    max-width: 560px;
+  }
+
+  &__info-row {
+    margin-top: 110px;
+    display: flex;
+
+    @media screen and (max-width: $break_lg) {
+      margin-top: 50px;
+    }
+
+    @media screen and (max-width: $break_xs) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__info {
+    max-width: 325px;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: $break_lg) {
+      max-width: 260px;
+    }
+
+    @media screen and (max-width: $break_xs) {
+      max-width: none;
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+
+.s-contact-form {
+  &__row-submit {
+    @media screen and (max-width: $break_xs) {
+      text-align: center;
+    }
+  }
+}
+
+
+.s-contact-info {
+
+  &__title {
+    @extend %font-size-40-lg28;
+
+    font-weight: 700;
+    line-height: 1.25em;
+    margin-bottom: 30px;
+
+
+    @media screen and (max-width: $break_xs) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__content {
+    font-size: 18px;
+    line-height: 1.3em;
+
+    a, p {
+      color: #000;
+      font-size: 18px;
+      line-height: 1.3em;
+      text-decoration: none;
+      padding-top: 0;
+
+      @media screen and (max-width: $break_lg) {
+        font-size: 14px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+  }
+}
+

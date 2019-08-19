@@ -1,0 +1,36 @@
+// ЦВЕТА
+$color_text: #000;
+
+$primary_color: #00A7A0;
+$secondary_color: #0961B3;
+
+
+$color_checkbox_border: #4A90E2;  // $primary_color;
+$color_checkbox_focus: #7ED321;
+$color_checkbox_border_disable: #9B9B9B;
+
+// РАЗМЕРЫ
+$baseFontSize: 10px;
+
+
+// ШРИФТЫ
+//////// Fonts
+//// web-safe fonts:
+// "Arial Black", "Helvetica CY", "Nimbus Sans L" sans-serif;
+// Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+// "Comic Sans MS", "Monaco CY", cursive;
+// "Courier New", "Nimbus Mono L", monospace;
+// Georgia, "Century Schoolbook L", Serif;
+// Impact, "Charcoal CY", sans-serif;
+// "Lucida Console", Monaco, monospace;
+// "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+// "Palatino Linotype", "Book Antiqua", Palatino, serif;
+// Tahoma, "Geneva CY", sans-serif;
+// "Times New Roman", "Times CY", "Nimbus Roman No9 L", serif;
+// "Trebuchet MS", "Helvetica CY", sans-serif;
+// Verdana, "Geneva CY", "DejaVu Sans", sans-serif;
+
+$global_ff1: "Gilroy", Arial, sans-serif;
+
+// брек пойнт для скрывания меню
+$break_hide-menu: 1150px;

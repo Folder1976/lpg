@@ -1,0 +1,29 @@
+header.site__header.header.is-fixed
+  .container
+    .header__inner
+      .header__logo.logo
+        a(href="/").logo__link
+          picture
+            source(srcset="./img/logo-366.png" media="(max-width: 366px)")
+            img(src="./img/logo.png", alt="Интергазсервис").logo__img
+      .header__right
+        nav.header__menu.header-menu
+          include ../modules/menu
+          .header-menu__mob
+            a.header-menu__call-back.mf-popup(href="#get-call-back" data-effect="mfp-zoom-in") Заказать звонок
+            .header-menu__block.header-menu-block
+              .header-menu-block__title Контактные данные
+              .header-menu-block__text
+                a(href="tel:84959953121") 8-495-995-31-21
+              .header-menu-block__text
+                a(href="mailto:autogas2007@yandex.ru") autogas2007@yandex.ru
+
+        .header__phone.header-phone
+          a.header-phone__tel(href="tel:84954070801") 8 (495) 407-08-01
+          a.header-phone__call-back.mf-popup(href="#get-call-back" data-effect="mfp-zoom-in") Заказать звонок
+
+        .header__mob-menu-btn.js-mob-menu-btn
+          .mob-menu__btn
+            span
+            span
+            span

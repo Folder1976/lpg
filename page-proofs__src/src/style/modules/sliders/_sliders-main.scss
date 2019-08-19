@@ -1,0 +1,36 @@
+%slider__arrows {
+  display: flex;
+  padding: 60px 0;
+  margin-left: -15px;
+
+  @media screen and (max-width: $break_lg) {
+    padding: 40px 0 10px;
+  }
+}
+
+%slider__arrow-icon {
+  width: 10px;
+  height: 17px;
+}
+
+%slider__arrow {
+  fill: #000;
+  transition: all .3s;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &:hover {
+    fill: $primary_color;
+  }
+}
+
+
