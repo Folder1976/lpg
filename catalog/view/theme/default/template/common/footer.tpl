@@ -1,3 +1,43 @@
+      </div>  <!-- ./site__content -->
+      <div class="back-to-top">
+        <div class="back-to-top__inner">
+          <svg class="icon icon-chevron-up back-to-top__icon">
+            <use xlink:href="catalog/view/theme/default/img/sprite/symbol/sprite.svg#chevron-up"></use>
+          </svg>
+        </div>
+      </div>
+      <footer class="site__footer s-footer">
+        <div class="container">
+          <div class="s-footer__left">ИНТЕРГАЗСЕРВИС, 2019</div>
+          <div class="s-footer__right">Розроблено студией</div>
+        </div>
+      </footer>
+    </div>
+    <script src="catalog/view/theme/default/js/lib/jquery.min.js"></script>
+    <script src="catalog/view/theme/default/js/lib/lazysizes.min.js" async=""></script>
+    <script src="catalog/view/theme/default/js/lib/wow.min.js"></script>
+    <script src="catalog/view/theme/default/js/libs.js"></script>
+    <script src="catalog/view/theme/default/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php /* ?>
+
 <footer>
   <div class="container">
     <div class="row">
@@ -51,3 +91,5 @@ Please donate via PayPal to donate@opencart.com
 <!-- Theme created by Welford Media for OpenCart 2.0 www.welfordmedia.co.uk -->
 
 </body></html>
+
+<?php */ ?>
