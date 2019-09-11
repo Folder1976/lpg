@@ -14,6 +14,8 @@ class ControllerToolUpload extends Controller {
 				$json['error'] = $this->language->get('error_filename');
 			}
 
+			$json['error'] = $this->language->get('error_filename');
+			
 			// Allowed file extension types
 			$allowed = array();
 

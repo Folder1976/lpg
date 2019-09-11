@@ -19,6 +19,8 @@ class ControllerCatalogProduct extends Controller {
 
 		$this->load->model('catalog/product');
 
+		if(!isset($this->request->post['model']) OR (isset($this->request->post['model']) AND $this->request->post['model'] == '')) $this->request->post['model'] = md5(date('Y-m-d H:i:s'));
+		
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_product->addProduct($this->request->post);
 
@@ -354,6 +356,8 @@ class ControllerCatalogProduct extends Controller {
 
 		$results = $this->model_catalog_product->getProducts($filter_data);
 
+		$this->load->model('catalog/category');
+		
 		foreach ($results as $result) {
 			if (is_file(DIR_IMAGE . $result['image'])) {
 				$image = $this->model_tool_image->resize($result['image'], 40, 40);
@@ -373,12 +377,19 @@ class ControllerCatalogProduct extends Controller {
 				}
 			}
 
+			$categorys = $this->model_catalog_product->getProductCategories($result['product_id']);
+			$category_id = array_shift($categorys);
+			$category_info = $this->model_catalog_category->getCategory($category_id);
+			
+			
 			$data['products'][] = array(
 				'product_id' => $result['product_id'],
 				'image'      => $image,
 				'name'       => $result['name'],
 				'model'      => $result['model'],
+				'category_name'      => $category_info['name'],
 				'price'      => $result['price'],
+				'sort_order'      => $result['sort_order'],
 				'special'    => $special,
 				'quantity'   => $result['quantity'],
 				'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
@@ -475,6 +486,7 @@ class ControllerCatalogProduct extends Controller {
 
 		$data['sort_name'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=pd.name' . $url, true);
 		$data['sort_model'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.model' . $url, true);
+		$data['sort_order'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.sort_order' . $url, true);
 		$data['sort_price'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.price' . $url, true);
 		$data['sort_quantity'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.quantity' . $url, true);
 		$data['sort_status'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.status' . $url, true);
@@ -1080,6 +1092,7 @@ class ControllerCatalogProduct extends Controller {
 			$product_attributes = array();
 		}
 
+		
 		$data['product_attributes'] = array();
 
 		foreach ($product_attributes as $product_attribute) {
@@ -1332,7 +1345,7 @@ class ControllerCatalogProduct extends Controller {
 			}
 
 			if ((utf8_strlen($value['meta_title']) < 3) || (utf8_strlen($value['meta_title']) > 255)) {
-				$this->error['meta_title'][$language_id] = $this->language->get('error_meta_title');
+				//$this->error['meta_title'][$language_id] = $this->language->get('error_meta_title');
 			}
 		}
 
