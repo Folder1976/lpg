@@ -77,15 +77,16 @@
     <div class="section-subtitle wow fadeInUp">Начнем с рассчета окупаемости</div>
     <div class="s-calc__row wow fadeInUp">
       <div class="s-calc__col-left">
-        <form class="form s-calc__form js-calc-form" action="">
+        <form class="form s-calc__form js-calc-form js-universalform" action="">
+          <input type="hidden" name="subj" value="calc">
           <div class="form__row">
             <div class="form__row-title form-row-title">
               <div class="form-row-title__num">1</div>
               <div class="form-row-title__text">Введите данные</div>
             </div>
             <div class="form__group form__group--inline">
-              <input class="form__control" type="text" name="gasoline-consumption" value="" placeholder="Расход бензина на 100 км">
-              <input class="form__control" type="text" name="mileage" value="" placeholder="Пробег автомобиля за сутки">
+              <input class="form__control" type="text" name="gasoline-consumption" value="" placeholder="Расход бензина на 100 км" required>
+              <input class="form__control" type="text" name="mileage" value="" placeholder="Пробег автомобиля за сутки" required>
             </div>
           </div>
           <div class="form__row">
@@ -94,14 +95,14 @@
               <div class="form-row-title__text">Выберите кол-во цилиндров</div>
             </div>
             <div class="form__group form__group--inline">
-              <select class="custom-select js-custom-select" name="cylinders">
+              <select class="custom-select js-custom-select" name="cylinders" required>
                 <option value="4">4 цилиндра</option>
                 <option value="5">5 цилиндров</option>
                 <option value="6">6 цилиндров</option>
                 <option value="7">7 цилиндров</option>
                 <option value="8">8 цилиндров</option>
               </select>
-              <select class="custom-select js-custom-select" name="engine-power">
+              <select class="custom-select js-custom-select" name="engine-power" required>
                 <option value="0">Мощность двигателя</option>
                 <option value="1000">1000</option>
                 <option value="1100">1100</option>
@@ -137,10 +138,11 @@
             <div class="s-calc-result-total__text">Комплект Alpha M 4 цил. ( эл.к-т Alpha M-4 / AT09 Alaska / IG7 Alpha LP)</div>
             <div class="s-calc-result-total__sum">17 000 руб</div>
           </div>
-          <form class="s-calc-result__form s-calc-result-form" action="">
+          <form class="s-calc-result__form s-calc-result-form js-universalform" action="">
+            <input type="hidden" name="subj" value="consultation-1">
             <div class="form__group form__group--inline">
-              <input class="form__control form__control--white s-calc-result-form__input" type="text" placeholder="Ваш номер телефона">
-              <button class="s-calc-result-form__btn bbtn bbtn--white">Заказать консультацию</button>
+              <input class="form__control form__control--white s-calc-result-form__input" type="text" placeholder="Ваш номер телефона" required>
+              <button type="submit" class="s-calc-result-form__btn bbtn bbtn--white">Заказать консультацию</button>
             </div>
           </form>
         </div>
@@ -168,16 +170,17 @@
       <div class="col-6 wow fadeInUp">
         <h2 class="section-title">Выглядит сложно?</h2>
         <div class="section-subtitle">Сэкономьте массу времени и нервов при<br>регистрации ГБО с нами!</div>
-        <form class="form s-registration__form s-registration-form">
+        <form class="form s-registration__form s-registration-form js-universalform">
+          <input type="hidden" name="subj" value="registeration-gbo">
           <div class="form__group form__group--inline">
             <input class="form__control" type="text" name="name" value="" placeholder="Ваше имя">
-            <input class="form__control" type="text" name="phone" value="" placeholder="Ваш номер телефона">
+            <input class="form__control" type="text" name="phone" value="" placeholder="Ваш номер телефона" required>
           </div>
           <div class="form__group">
             <input class="form__control form__control--w100" type="text" name="model" value="" placeholder="Марка, модель, год выпуска, мощность двигателя">
           </div>
           <div class="form__group">
-            <button class="bbtn s-registration-form__submit" type="submit">Оставить заявку</button>
+            <button type="submit" class="bbtn s-registration-form__submit" type="submit">Оставить заявку</button>
           </div>
         </form>
       </div>
@@ -252,10 +255,10 @@
             <div class="slider js-slider">
               <div class="slider__list">
                 <picture>
-                  <source type="image/webp" data-srcset="catalog/view/theme/default/img/foto/doc-1.webp"><img class="lazyload" data-src="./img/foto/doc-1.png" alt="3-4 цилиндра">
+                  <source type="image/webp" data-srcset="/catalog/view/theme/default/img/foto/doc-1.webp"><img class="lazyload js-zoom-foto-bf" data-src="/catalog/view/theme/default/img/foto/doc-1.png" data-big-foto="/catalog/view/theme/default/img/foto/doc-1.png" alt="doc-1">
                 </picture>
                 <picture>
-                  <source type="image/webp" data-srcset="catalog/view/theme/default/img/foto/doc-2.webp"><img class="lazyload" data-src="./img/foto/doc-2.png" alt="6-8 цилиндров">
+                  <source type="image/webp" data-srcset="/catalog/view/theme/default/img/foto/doc-2.webp"><img class="lazyload js-zoom-foto-bf" data-src="/catalog/view/theme/default/img/foto/doc-2.png" data-big-foto="/catalog/view/theme/default/img/foto/doc-2.png" alt="doc-2">
                 </picture>
               </div>
               <div class="slider__arrows">
@@ -371,15 +374,16 @@
     <div class="s-contact__content">
       <h2 class="section-title wow fadeInUp">Интересует ГБО?</h2>
       <div class="section-subtitle wow fadeInUp">Не знаете как самостоятельно со всем разобраться?<br>Оставьте заявку и наш специалист позвонит Вам для консультации</div>
-      <form class="form s-contact__form s-contact-form wow fadeInUp">
+      <form class="form js-universalform s-contact__form s-contact-form wow fadeInUp">
+        <input type="hidden" name="subj" value="consultation-2">
         <div class="form__row">
           <div class="form__group form__group--inline">
-            <input class="form__control" type="text" name="city" value="" placeholder="Ваше город">
-            <input class="form__control" type="text" name="phone" value="" placeholder="Ваш номер телефона">
+            <input class="form__control" type="text" name="city" value="" placeholder="Ваш город" required>
+            <input class="form__control" type="text" name="phone" value="" placeholder="Ваш номер телефона" required>
           </div>
         </div>
         <div class="form__row s-contact-form__row-submit">
-          <button class="bbtn">Заказать консультацию</button>
+          <button type="submit" class="bbtn">Заказать консультацию</button>
         </div>
       </form>
       <div class="s-contact__info-row wow fadeInUp">

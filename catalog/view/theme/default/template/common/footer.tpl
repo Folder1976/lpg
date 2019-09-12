@@ -11,6 +11,15 @@
           <div class="s-footer__left">ИНТЕРГАЗСЕРВИС, 2019</div>
           <div class="s-footer__right">Розроблено студией</div>
         </div>
+
+        <div class="modal-msg">
+          <div class="modal-msg__close">
+            <svg class="modal-msg__close-icon">
+              <use xlink:href="catalog/view/theme/default/img/sprite/symbol/sprite.svg#close"></use>
+            </svg>
+          </div>
+          <div class="modal-msg__text"></div>
+        </div>
       </footer>
     </div>
     <script src="catalog/view/theme/default/js/lib/jquery.min.js"></script>
@@ -18,6 +27,48 @@
     <script src="catalog/view/theme/default/js/lib/wow.min.js"></script>
     <script src="catalog/view/theme/default/js/libs.js"></script>
     <script src="catalog/view/theme/default/js/main.js"></script>
+
+
+    <script>
+      var showModalMsg = function(msg, autoClose = true){
+        $('.modal-msg__text').html(msg);
+        $('.modal-msg').show(300);
+
+        if ( autoClose ) {
+          setTimeout(function(){
+            $('.modal-msg').hide(300);
+          }, 3000);
+        }
+      }
+
+      $('.js-universalform').on('submit', function(e) {
+        e.preventDefault();
+        var form = $(this);
+
+        $.ajax({
+          url: '/index.php?route=account/universalform',
+          type: 'post',
+          data: form.serialize(),
+          dataType: 'json',
+          beforeSend: function() {},
+          complete: function() {},
+          success: function(json) {
+          
+            if(json['success']){
+              form.find('input').val('');
+              showModalMsg('<div class="alert-success">' + json['success'] + '</div>');
+            }
+          
+            if(json['error']){
+               showModalMsg('<div class="alert-error">' + json['error'] + '</div>');
+            }
+          },
+          error: function(xhr, ajaxOptions, thrownError) {
+            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 

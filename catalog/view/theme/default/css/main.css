@@ -1987,6 +1987,48 @@ hr {
   height: 15px;
 }
 
+.modal-msg {
+  display: none;
+  position: fixed;
+  width: 70%;
+  z-index: 99999;
+  padding: 20px 10px;
+  text-align: center;
+  left: 15%;
+  top: 40%;
+  -webkit-box-shadow: 0 3px 100px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 100px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  background-color: #ffffff;
+  font-size: 18px;
+}
+
+.modal-msg .alert-success,
+.modal-msg .alert-danger {
+  background-color: transparent;
+}
+
+.modal-msg__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  opacity: .8;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.modal-msg__close:hover {
+  opacity: 1;
+}
+
+.modal-msg__close-icon {
+  width: 16px;
+  height: 16px;
+  fill: #000;
+}
+
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2985,6 +3027,11 @@ a.bbtn--white:hover {
 
 .s-stages__images > *:not(:last-child) {
   margin-right: 20px;
+}
+
+.s-stages__images img {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
 }
 
 .s-stages-list {

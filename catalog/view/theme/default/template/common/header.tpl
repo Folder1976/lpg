@@ -99,10 +99,11 @@
       <div class="mf-popup-block mfp-hide mfp-with-anim" id="get-call-back">
         <div class="mf-title">Остались вопросы? </div>
         <div class="mf-text">Не знаете как самостоятельно разобраться?<br>Оставьте заявку и наш специалист позвонит Вам для консультации</div>
-        <form class="form mf-form">
+        <form class="form js-universalform mf-form">
+          <input type="hidden" name="subj" value="consultation-popup">
           <div class="form__group form__group--inline">
             <input class="form__control form__control--white" type="text" name="name" value="" placeholder="Ваше имя">
-            <input class="form__control form__control--white" type="text" name="phone" value="" placeholder="Ваш номер телефона">
+            <input class="form__control form__control--white" type="text" name="phone" value="" placeholder="Ваш номер телефона" required>
           </div>
           <div class="form__group">
             <input class="form__control form__control--white form__control--w100" type="text" name="question" value="" placeholder="Ваш вопрос">
