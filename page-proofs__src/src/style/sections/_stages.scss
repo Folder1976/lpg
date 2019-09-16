@@ -74,6 +74,10 @@
   & > *:not(:last-child) {
     margin-right: 20px;
   }
+
+  img {
+    cursor: zoom-in;
+  }
 }
 
 .s-stages__btn-wrap {

@@ -6,9 +6,9 @@ var devConfig = TASK_CONFIG;
 var buildConfig = JSON.stringify(devConfig);
 buildConfig = JSON.parse(buildConfig);
 // и меняем необходимые значения:
-let buildDest = "build"
-buildConfig.tasks.clean.folders   = buildDest;
-buildConfig.tasks.pug.dest        = buildDest + "/";
+let buildDest = "../catalog/view/theme/default"
+buildConfig.tasks.clean.folders   = 'build/'; //buildDest;
+buildConfig.tasks.pug.dest        = 'build/'; //buildDest + "/";
 
 buildConfig.tasks.images.dest     = buildDest + "/img";
 buildConfig.tasks.images.minify   = true;
