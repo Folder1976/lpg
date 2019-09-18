@@ -39,6 +39,8 @@
       </div>
     </div>
   </div>
-  <div class="s-contact__map"><iframe data-src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2249.5660869427834!2d37.61758668605813!3d55.679145303205715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1565262340871!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen class="lazyload"></iframe></div>
+  <div class="s-contact__map"><iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3Ae3afdcb99c7a2bebfd053a7facd1e06b9ddc12a097fc38702dc4a9594c2c433c&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe></div>
   <div class="s-contact__bg"></div>
 </section>
+
+

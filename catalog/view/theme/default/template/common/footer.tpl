@@ -55,7 +55,8 @@
           success: function(json) {
           
             if(json['success']){
-              form.find('input').val('');
+              $.magnificPopup.close();
+              form.trigger("reset");
               showModalMsg('<div class="alert-success">' + json['success'] + '</div>');
             }
           
