@@ -3,7 +3,7 @@
 	class ControllerAccountUniversalform extends Controller {
 		private $error = array();
 						
-		public function podpiska() {
+		public function index() {
 			$json = array();
 					
 					
@@ -20,7 +20,7 @@
 					$message  .= $name .': '.$value. "\n\n";
 				}
 				
-				echo "<pre>";print_r(var_dump($message));echo "</pre>";
+				//echo "<pre>";print_r(var_dump($message));echo "</pre>";
 				
 				
 					$mail = new Mail();

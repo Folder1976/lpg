@@ -18,7 +18,11 @@ class ControllerCatalogProduct extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('catalog/product');
-
+		
+		$this->load->model('user/user');
+		$user_info = $this->model_user_user->getUser($this->session->data['user_id']);
+		$this->request->post['store_id'] = $user_info['store_id'];
+		
 		if(!isset($this->request->post['model']) OR (isset($this->request->post['model']) AND $this->request->post['model'] == '')) $this->request->post['model'] = md5(date('Y-m-d H:i:s'));
 		
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
@@ -34,6 +38,14 @@ class ControllerCatalogProduct extends Controller {
 
 			if (isset($this->request->get['filter_model'])) {
 				$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
+			}
+
+			if (isset($this->request->get['filter_store_id'])) {
+				$url .= '&filter_store_id=' . urlencode(html_entity_decode($this->request->get['filter_store_id'], ENT_QUOTES, 'UTF-8'));
+			}
+
+			if (isset($this->request->get['filter_mystore_id'])) {
+				$url .= '&filter_mystore_id=' . urlencode(html_entity_decode($this->request->get['filter_mystore_id'], ENT_QUOTES, 'UTF-8'));
 			}
 
 			if (isset($this->request->get['filter_price'])) {
@@ -73,6 +85,11 @@ class ControllerCatalogProduct extends Controller {
 
 		$this->load->model('catalog/product');
 
+		$this->load->model('user/user');
+		$user_info = $this->model_user_user->getUser($this->session->data['user_id']);
+		$this->request->post['store_id'] = $user_info['store_id'];
+	
+		
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_product->editProduct($this->request->get['product_id'], $this->request->post);
 
@@ -84,6 +101,14 @@ class ControllerCatalogProduct extends Controller {
 				$url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
 			}
 
+			if (isset($this->request->get['filter_store_id'])) {
+				$url .= '&filter_store_id=' . urlencode(html_entity_decode($this->request->get['filter_store_id'], ENT_QUOTES, 'UTF-8'));
+			}
+
+			if (isset($this->request->get['filter_mystore_id'])) {
+				$url .= '&filter_mystore_id=' . urlencode(html_entity_decode($this->request->get['filter_mystore_id'], ENT_QUOTES, 'UTF-8'));
+			}
+			
 			if (isset($this->request->get['filter_model'])) {
 				$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
 			}
@@ -136,6 +161,14 @@ class ControllerCatalogProduct extends Controller {
 
 			if (isset($this->request->get['filter_name'])) {
 				$url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
+			}
+
+			if (isset($this->request->get['filter_store_id'])) {
+				$url .= '&filter_store_id=' . urlencode(html_entity_decode($this->request->get['filter_store_id'], ENT_QUOTES, 'UTF-8'));
+			}
+
+			if (isset($this->request->get['filter_mystore_id'])) {
+				$url .= '&filter_mystore_id=' . urlencode(html_entity_decode($this->request->get['filter_mystore_id'], ENT_QUOTES, 'UTF-8'));
 			}
 
 			if (isset($this->request->get['filter_model'])) {
@@ -196,6 +229,14 @@ class ControllerCatalogProduct extends Controller {
 				$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
 			}
 
+			if (isset($this->request->get['filter_store_id'])) {
+				$url .= '&filter_store_id=' . urlencode(html_entity_decode($this->request->get['filter_store_id'], ENT_QUOTES, 'UTF-8'));
+			}
+
+			if (isset($this->request->get['filter_mystore_id'])) {
+				$url .= '&filter_mystore_id=' . urlencode(html_entity_decode($this->request->get['filter_mystore_id'], ENT_QUOTES, 'UTF-8'));
+			}
+
 			if (isset($this->request->get['filter_price'])) {
 				$url .= '&filter_price=' . $this->request->get['filter_price'];
 			}
@@ -231,6 +272,18 @@ class ControllerCatalogProduct extends Controller {
 			$filter_name = $this->request->get['filter_name'];
 		} else {
 			$filter_name = null;
+		}
+
+		if (isset($this->request->get['filter_store_id'])) {
+			$filter_store_id = $this->request->get['filter_store_id'];
+		} else {
+			$filter_store_id = null;
+		}
+
+		if (isset($this->request->get['filter_mystore_id'])) {
+			$filter_mystore_id = $this->request->get['filter_mystore_id'];
+		} else {
+			$filter_mystore_id = null;
 		}
 
 		if (isset($this->request->get['filter_model'])) {
@@ -291,6 +344,14 @@ class ControllerCatalogProduct extends Controller {
 			$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
 		}
 
+		if (isset($this->request->get['filter_mystore_id'])) {
+			$url .= '&filter_mystore_id=' . urlencode(html_entity_decode($this->request->get['filter_mystore_id'], ENT_QUOTES, 'UTF-8'));
+		}
+
+		if (isset($this->request->get['filter_store_id'])) {
+			$url .= '&filter_store_id=' . urlencode(html_entity_decode($this->request->get['filter_store_id'], ENT_QUOTES, 'UTF-8'));
+		}
+
 		if (isset($this->request->get['filter_price'])) {
 			$url .= '&filter_price=' . $this->request->get['filter_price'];
 		}
@@ -337,11 +398,18 @@ class ControllerCatalogProduct extends Controller {
 
 		$data['products'] = array();
 
+		$this->load->model('user/user');
+		$user_info = $this->model_user_user->getUser($this->session->data['user_id']);
+	
+		
 		$filter_data = array(
 			'filter_name'	  => $filter_name,
+			'filter_store_id'	  => $filter_store_id,
+			'filter_mystore_id'	  => $filter_mystore_id,
 			'filter_model'	  => $filter_model,
 			'filter_price'	  => $filter_price,
 			'filter_quantity' => $filter_quantity,
+			'store_id'   => $user_info['store_id'],
 			'filter_status'   => $filter_status,
 			'filter_image'    => $filter_image,
 			'sort'            => $sort,
@@ -350,6 +418,25 @@ class ControllerCatalogProduct extends Controller {
 			'limit'           => $this->config->get('config_limit_admin')
 		);
 
+		
+		$this->load->model('setting/store');
+
+		$stores = $this->model_setting_store->getStores();
+		$data['stores'] = array(-1 => array(
+										   'store_id'=>-1,
+										   'name'=>'Все'
+										   ),
+								0 => array(
+										   'store_id'=>0,
+										   'name'=>'Общий блок'
+										   ),
+								);
+		
+		foreach($stores as $store){
+			$data['stores'][$store['store_id']] = $store;
+		}
+			
+
 		$this->load->model('tool/image');
 
 		$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
@@ -357,7 +444,7 @@ class ControllerCatalogProduct extends Controller {
 		$results = $this->model_catalog_product->getProducts($filter_data);
 
 		$this->load->model('catalog/category');
-		
+
 		foreach ($results as $result) {
 			if (is_file(DIR_IMAGE . $result['image'])) {
 				$image = $this->model_tool_image->resize($result['image'], 40, 40);
@@ -381,13 +468,22 @@ class ControllerCatalogProduct extends Controller {
 			$category_id = array_shift($categorys);
 			$category_info = $this->model_catalog_category->getCategory($category_id);
 			
+			$editable = '';
+			if($user_info['store_id'] > 0){
+				if($result['store_id'] == $user_info['store_id']){
+					$editable = ' <span style="color:green;">[ваш блок]</span>';
+				}else{
+					$editable = ' <span style="color:orange;">[общий блок]</span>';
+				}
+			}
 			
 			$data['products'][] = array(
 				'product_id' => $result['product_id'],
 				'image'      => $image,
 				'name'       => $result['name'],
 				'model'      => $result['model'],
-				'category_name'      => $category_info['name'],
+				'product_store_id'  => $result['product_store_id'],
+				'category_name'      => $category_info['name'].$editable,
 				'price'      => $result['price'],
 				'sort_order'      => $result['sort_order'],
 				'special'    => $special,
@@ -458,6 +554,14 @@ class ControllerCatalogProduct extends Controller {
 			$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
 		}
 
+		if (isset($this->request->get['filter_store_id'])) {
+			$url .= '&filter_store_id=' . urlencode(html_entity_decode($this->request->get['filter_store_id'], ENT_QUOTES, 'UTF-8'));
+		}
+
+		if (isset($this->request->get['filter_mystore_id'])) {
+			$url .= '&filter_mystore_id=' . urlencode(html_entity_decode($this->request->get['filter_mystore_id'], ENT_QUOTES, 'UTF-8'));
+		}
+
 		if (isset($this->request->get['filter_price'])) {
 			$url .= '&filter_price=' . $this->request->get['filter_price'];
 		}
@@ -496,6 +600,14 @@ class ControllerCatalogProduct extends Controller {
 
 		if (isset($this->request->get['filter_name'])) {
 			$url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
+		}
+
+		if (isset($this->request->get['filter_store_id'])) {
+			$url .= '&filter_store_id=' . urlencode(html_entity_decode($this->request->get['filter_store_id'], ENT_QUOTES, 'UTF-8'));
+		}
+
+		if (isset($this->request->get['filter_mystore_id'])) {
+			$url .= '&filter_mystore_id=' . urlencode(html_entity_decode($this->request->get['filter_mystore_id'], ENT_QUOTES, 'UTF-8'));
 		}
 
 		if (isset($this->request->get['filter_model'])) {
@@ -538,6 +650,8 @@ class ControllerCatalogProduct extends Controller {
 
 		$data['filter_name'] = $filter_name;
 		$data['filter_model'] = $filter_model;
+		$data['filter_store_id'] = $filter_store_id;
+		$data['filter_mystore_id'] = $filter_mystore_id;
 		$data['filter_price'] = $filter_price;
 		$data['filter_quantity'] = $filter_quantity;
 		$data['filter_status'] = $filter_status;
@@ -703,6 +817,14 @@ class ControllerCatalogProduct extends Controller {
 			$url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
 		}
 
+		if (isset($this->request->get['filter_store_id'])) {
+			$url .= '&filter_store_id=' . urlencode(html_entity_decode($this->request->get['filter_store_id'], ENT_QUOTES, 'UTF-8'));
+		}
+		
+		if (isset($this->request->get['filter_mystore_id'])) {
+			$url .= '&filter_mystore_id=' . urlencode(html_entity_decode($this->request->get['filter_mystore_id'], ENT_QUOTES, 'UTF-8'));
+		}
+	
 		if (isset($this->request->get['filter_model'])) {
 			$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
 		}
@@ -755,6 +877,10 @@ class ControllerCatalogProduct extends Controller {
 			$product_info = $this->model_catalog_product->getProduct($this->request->get['product_id']);
 		}
 
+		$this->load->model('user/user');
+		$user_info = $this->model_user_user->getUser($this->session->data['user_id']);
+		$data['user_store_id'] = $user_info['store_id'];
+		
 		$data['token'] = $this->session->data['token'];
 
 		$this->load->model('localisation/language');
@@ -843,6 +969,14 @@ class ControllerCatalogProduct extends Controller {
 			$data['product_store'] = $this->model_catalog_product->getProductStores($this->request->get['product_id']);
 		} else {
 			$data['product_store'] = array(0);
+		}
+		
+		foreach($data['stores'] as $index => $store){
+			
+			if($store['store_id'] == $data['user_store_id']){
+				$data['stores'][$index]['name'] .= ' <span style="color:green;">[ваш магазин]</span>';
+				break;
+			}
 		}
 
 		if (isset($this->request->post['keyword'])) {

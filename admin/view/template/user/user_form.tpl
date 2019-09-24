@@ -48,6 +48,22 @@
               </select>
             </div>
           </div>
+          
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-store_id">Магазин</label>
+            <div class="col-sm-10">
+              <select name="store_id" id="input-store_id" class="form-control">
+                <option value="0">Все магазины</option>
+                <?php foreach ($stores as $store) { ?>
+                <?php if ($store['store_id'] == $store_id) { ?>
+                <option value="<?php echo $store['store_id']; ?>" selected="selected"><?php echo $store['name']; ?></option>
+                <?php } else { ?>
+                <option value="<?php echo $store['store_id']; ?>"><?php echo $store['name']; ?></option>
+                <?php } ?>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-firstname"><?php echo $entry_firstname; ?></label>
             <div class="col-sm-10">

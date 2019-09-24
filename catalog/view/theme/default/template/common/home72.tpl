@@ -39,7 +39,8 @@
       </div>
     </div>
   </div>
-  <div class="s-contact__map"><iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3Ae3afdcb99c7a2bebfd053a7facd1e06b9ddc12a097fc38702dc4a9594c2c433c&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe></div>
+  <div class="s-contact__map">
+    <iframe src="<?php echo $product['meta_keyword']; ?>" width="100%" height="100%" frameborder="0"></iframe></div>
   <div class="s-contact__bg"></div>
 </section>
 

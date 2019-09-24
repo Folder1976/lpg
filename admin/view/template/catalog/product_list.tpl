@@ -32,28 +32,13 @@
       <div class="panel-body">
         <div class="well">
           <div class="row">
-            <div class="col-sm-4">
-              <div class="form-group">
+            <div class="col-sm-12">
+              <div class="form-group col-sm-4">
                 <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
                 <input type="text" name="filter_name" value="<?php echo $filter_name; ?>" placeholder="<?php echo $entry_name; ?>" id="input-name" class="form-control" />
               </div>
-              <div class="form-group">
-                <label class="control-label" for="input-model"><?php echo $entry_model; ?></label>
-                <input type="text" name="filter_model" value="<?php echo $filter_model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="form-group">
-                <label class="control-label" for="input-price"><?php echo $entry_price; ?></label>
-                <input type="text" name="filter_price" value="<?php echo $filter_price; ?>" placeholder="<?php echo $entry_price; ?>" id="input-price" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="input-quantity"><?php echo $entry_quantity; ?></label>
-                <input type="text" name="filter_quantity" value="<?php echo $filter_quantity; ?>" placeholder="<?php echo $entry_quantity; ?>" id="input-quantity" class="form-control" />
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="form-group">
+              
+              <div class="form-group col-sm-4">
                 <label class="control-label" for="input-status"><?php echo $entry_status; ?></label>
                 <select name="filter_status" id="input-status" class="form-control">
                   <option value="*"></option>
@@ -69,7 +54,7 @@
                   <?php } ?>
                 </select>
               </div>
-              <div class="form-group">
+              <div class="form-group col-sm-4">
                 <label class="control-label" for="input-image"><?php echo $entry_image; ?></label>
                 <select name="filter_image" id="input-image" class="form-control">
                   <option value="*"></option>
@@ -85,7 +70,37 @@
                   <?php } ?>
                 </select>
               </div>
-              <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-filter"></i> <?php echo $button_filter; ?></button>
+             <div class="form-group col-sm-4">
+                <label class="control-label" for="input-store_id">По создателю</label>
+                <select name="filter_store_id" id="input-store_id" class="form-control">
+                  <?php foreach($stores as $store){ ?>
+                    <?php if (isset($_GET['filter_store_id']) AND (int)$_GET['filter_store_id'] == $store['store_id']) { ?>
+                    <option value="<?php echo $store['store_id']; ?>" selected="selected"><?php echo $store['name']; ?></option>
+                    <?php } else { ?>
+                    <option value="<?php echo $store['store_id']; ?>"><?php echo $store['name']; ?></option>
+                    <?php } ?>
+                  <?php } ?>
+
+                </select>
+              </div>
+              <div class="form-group col-sm-4">
+                <label class="control-label" for="input-mystore_id">По привязке</label>
+                <select name="filter_mystore_id" id="input-mystore_id" class="form-control">
+                  <?php foreach($stores as $store){ ?>
+                    <?php if (isset($_GET['filter_mystore_id']) AND (int)$_GET['filter_mystore_id'] == $store['store_id']) { ?>
+                    <option value="<?php echo $store['store_id']; ?>" selected="selected"><?php echo $store['name']; ?></option>
+                    <?php } else { ?>
+                    <option value="<?php echo $store['store_id']; ?>"><?php echo $store['name']; ?></option>
+                    <?php } ?>
+                  <?php } ?>
+
+                </select>
+              </div>
+              
+              <div class="col-sm-4">
+                
+                <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-filter"></i> <?php echo $button_filter; ?></button>
+              </div>
             </div>
           </div>
         </div>
@@ -112,11 +127,14 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_order; ?>">Сортировка</a>
                     <?php } ?></td>
-                  <td class="text-right"><?php if ($sort == 'p.quantity') { ?>
+                  <td class="text-right">
+                    Создатель
+                  </td>
+                  <!--td class="text-right"><?php if ($sort == 'p.quantity') { ?>
                     <a href="<?php echo $sort_quantity; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_quantity; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_quantity; ?>"><?php echo $column_quantity; ?></a>
-                    <?php } ?></td>
+                    <?php } ?></td-->
                   <td class="text-left"><?php if ($sort == 'p.status') { ?>
                     <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
                     <?php } else { ?>
@@ -147,13 +165,16 @@
                     <?php } else { ?>
                     <?php echo $product['sort_order']; ?>
                     <?php } ?></td>
-                  <td class="text-right"><?php if ($product['quantity'] <= 0) { ?>
+                  <td class="text-right">
+                      <?php echo $stores[$product['product_store_id']]['name'];?>
+                  </td>
+                  <!--td class="text-right"><?php if ($product['quantity'] <= 0) { ?>
                     <span class="label label-warning"><?php echo $product['quantity']; ?></span>
                     <?php } elseif ($product['quantity'] <= 5) { ?>
                     <span class="label label-danger"><?php echo $product['quantity']; ?></span>
                     <?php } else { ?>
                     <span class="label label-success"><?php echo $product['quantity']; ?></span>
-                    <?php } ?></td>
+                    <?php } ?></td-->
                   <td class="text-left"><?php echo $product['status']; ?></td>
                   <td class="text-right"><a href="<?php echo $product['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
                 </tr>
@@ -182,6 +203,18 @@ $('#button-filter').on('click', function() {
 
 	if (filter_name) {
 		url += '&filter_name=' + encodeURIComponent(filter_name);
+	}
+
+	var filter_mystore_id = $('select[name=\'filter_mystore_id\']').val();
+
+	if (filter_mystore_id) {
+		url += '&filter_mystore_id=' + encodeURIComponent(filter_mystore_id);
+	}
+
+	var filter_store_id = $('select[name=\'filter_store_id\']').val();
+
+	if (filter_store_id) {
+		url += '&filter_store_id=' + encodeURIComponent(filter_store_id);
 	}
 
 	var filter_model = $('input[name=\'filter_model\']').val();

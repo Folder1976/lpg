@@ -446,6 +446,29 @@ class ControllerUserUser extends Controller {
 			$data['status'] = 0;
 		}
 
+		if (isset($this->request->post['store_id'])) {
+			$data['store_id'] = $this->request->post['store_id'];
+		} elseif (!empty($user_info)) {
+			$data['store_id'] = $user_info['store_id'];
+		} else {
+			$data['store_id'] = 0;
+		}
+
+		
+		$this->load->model('setting/store');
+		$results = $this->model_setting_store->getStores();
+
+		foreach ($results as $result) {
+			$data['stores'][] = array(
+				'store_id' => $result['store_id'],
+				'name'     => $result['name'],
+				'url'      => $result['url'],
+				'edit'     => $this->url->link('setting/store/edit', 'token=' . $this->session->data['token'] . '&store_id=' . $result['store_id'], true)
+			);
+		}
+		
+		
+		
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');

@@ -89,6 +89,7 @@ class ControllerCommonHome extends Controller {
 				'thumb'       => $image,
 				'image'        => 'image/'.$result['image'],
 				'name'        => html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8'),
+				'meta_keyword'        => html_entity_decode($result['meta_keyword'], ENT_QUOTES, 'UTF-8'),
 				'category_id'        => $category_id,
 				'category_name' => html_entity_decode($category_info['name'], ENT_QUOTES, 'UTF-8'), 
 				'description' => html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'),
