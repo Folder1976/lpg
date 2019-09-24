@@ -64,7 +64,7 @@
               </div>
             </div>
           </div>
-          <div class="s-stages__btn-wrap wow fadeInUp"><a class="bbtn" href="#">Заказать установку</a></div>
+          <div class="s-stages__btn-wrap wow fadeInUp"><a class="bbtn" href="#registration">Заказать установку</a></div>
         </div>
       </div>
     </div>

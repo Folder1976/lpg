@@ -17,7 +17,7 @@
 		  <?php foreach($product['attribute_groups'] as $attribute_groups){ ?>
 		  <?php foreach($attribute_groups['attribute'] as $attribute){ ?>
 			<?php if($attribute['text'] != ''){ ?>		  
-		  <div class="s-info__btn wow fadeInUp"><a class="bbtn bbtn--icon" href="<?php echo $attribute['text']; ?>">Смотреть видео
+		  <div class="s-info__btn wow fadeInUp"><a class="bbtn bbtn--icon" target="_blank" href="<?php echo $attribute['text']; ?>">Смотреть видео
 		      <svg class="icon icon-video bbtn__icon">
                 <use xlink:href="catalog/view/theme/default/img/sprite/symbol/sprite.svg#video"></use>
               </svg></a></div>
