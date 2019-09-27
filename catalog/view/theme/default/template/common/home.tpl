@@ -3,8 +3,9 @@
 <?php foreach($products as $product){ 
 
   //echo '<br>'.$product['category_id'];
-    
-  require_once DIR_TEMPLATE.'default/template/common/home'.$product['category_id'].'.tpl';
+  if((int)$product['category_id'] != 73){
+    require DIR_TEMPLATE.'default/template/common/home'.$product['category_id'].'.tpl';
+  }
 
 } ?>
 

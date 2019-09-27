@@ -61,6 +61,8 @@
             <nav class="header__menu header-menu">
               <ul class="menu header-menu__menu" id="menu">
                 <li class="menu__item"><a class="menu__link" href="#calc">Калькулятор</a></li>
+               
+                <li class="menu__item"><a class="menu__link" href="/photogallery">Примеры работ</a></li>
                 <li class="menu__item"><a class="menu__link" href="#registration">Регистрация</a></li>
                 <li class="menu__item"><a class="menu__link" href="#reviews">Отзывы</a></li>
                 <li class="menu__item"><a class="menu__link" href="#recommend">ГИС Alpha</a></li>
@@ -115,24 +117,6 @@
           </div>
         </form>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

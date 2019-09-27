@@ -81,7 +81,11 @@ class ModelCatalogProduct extends Model {
 
 		if (isset($data['product_image'])) {
 			foreach ($data['product_image'] as $product_image) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "product_image SET product_id = '" . (int)$product_id . "', image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+				$this->db->query("INSERT INTO " . DB_PREFIX . "product_image SET product_id = '" . (int)$product_id . "',
+								 image = '" . $this->db->escape($product_image['image']) . "',
+								 sort_order = '" . (int)$product_image['sort_order'] . "',
+								 text = '" . $this->db->escape($product_image['text']) . "'
+								 ");
 			}
 		}
 
@@ -247,7 +251,7 @@ class ModelCatalogProduct extends Model {
 
 		if (isset($data['product_image'])) {
 			foreach ($data['product_image'] as $product_image) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "product_image SET product_id = '" . (int)$product_id . "', image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+				$this->db->query("INSERT INTO " . DB_PREFIX . "product_image SET product_id = '" . (int)$product_id . "', text = '" . $this->db->escape($product_image['text']) . "', image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
 			}
 		}
 

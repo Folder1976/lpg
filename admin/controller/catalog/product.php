@@ -477,13 +477,17 @@ class ControllerCatalogProduct extends Controller {
 				}
 			}
 			
+			if(isset($category_info['name'])){
+				$categ_name = $category_info['name'];
+			}
+			
 			$data['products'][] = array(
 				'product_id' => $result['product_id'],
 				'image'      => $image,
 				'name'       => $result['name'],
 				'model'      => $result['model'],
 				'product_store_id'  => $result['product_store_id'],
-				'category_name'      => $category_info['name'].$editable,
+				'category_name'      => $categ_name.$editable,
 				'price'      => $result['price'],
 				'sort_order'      => $result['sort_order'],
 				'special'    => $special,
@@ -1384,7 +1388,8 @@ class ControllerCatalogProduct extends Controller {
 			$data['product_images'][] = array(
 				'image'      => $image,
 				'thumb'      => $this->model_tool_image->resize($thumb, 100, 100),
-				'sort_order' => $product_image['sort_order']
+				'text' => $product_image['text'],
+				'sort_order' => $product_image['sort_order'],
 			);
 		}
 

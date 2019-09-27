@@ -55,7 +55,12 @@ setcookie('IdProduto',$array_produtos,time() + 34560000, "/");
             <?php } ?>
             <?php if ($images) { ?>
             <?php foreach ($images as $image) { ?>
-            <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+            <li class="image-additional">
+              <a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>">
+              <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+              <?php echo $image['text']; ?>
+              </a>
+            </li>
             <?php } ?>
             <?php } ?>
           </ul>

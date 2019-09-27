@@ -27,7 +27,11 @@
     <script src="catalog/view/theme/default/js/lib/wow.min.js"></script>
     <script src="catalog/view/theme/default/js/libs.js"></script>
     <script src="catalog/view/theme/default/js/main.js"></script>
-
+  <style>
+    .site__footer{
+      z-index: 2000;
+    }
+  </style>
 
     <script>
       var showModalMsg = function(msg, autoClose = true){
@@ -45,12 +49,16 @@
         e.preventDefault();
         var form = $(this);
 
+        form.find('button[type="submit"]').hide(300);
+        
         $.ajax({
           url: '/index.php?route=account/universalform',
           type: 'post',
           data: form.serialize(),
           dataType: 'json',
-          beforeSend: function() {},
+          beforeSend: function() {
+            showModalMsg('<div class="alert-success">Подождите, отправляю...</div>');
+            },
           complete: function() {},
           success: function(json) {
           

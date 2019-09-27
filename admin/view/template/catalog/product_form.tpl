@@ -230,8 +230,8 @@
                   </label>
                 </div>
               </div>
-              <div class="form-group" style="display: none">
-                <label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="<?php echo $help_keyword; ?>"><?php echo $entry_keyword; ?></span></label>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="Адрес ЧПУ для фотогалереи"><?php echo $entry_keyword; ?></span></label>
                 <div class="col-sm-10">
                   <input type="text" name="keyword" value="<?php echo $keyword; ?>" placeholder="<?php echo $entry_keyword; ?>" id="input-keyword" class="form-control" />
                   <?php if ($error_keyword) { ?>
@@ -825,9 +825,10 @@
                 <table id="images" class="table table-striped table-bordered table-hover">
                   <thead>
                     <tr>
-                      <td class="text-left"><?php echo $entry_additional_image; ?></td>
-                      <td class="text-right"><?php echo $entry_sort_order; ?></td>
-                      <td></td>
+                      <td class="text-left" style="width: 15%;"><?php echo $entry_additional_image; ?></td>
+                      <td class="text-right" style="width: 15%;"><?php echo $entry_sort_order; ?></td>
+                      <td class="text-right">Описание к фото</td>
+                      <td style="width: 5%;"></td>
                     </tr>
                   </thead>
                   <tbody>
@@ -836,6 +837,7 @@
                     <tr id="image-row<?php echo $image_row; ?>">
                       <td class="text-left"><a href="" id="thumb-image<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $product_image['thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="product_image[<?php echo $image_row; ?>][image]" value="<?php echo $product_image['image']; ?>" id="input-image<?php echo $image_row; ?>" /></td>
                       <td class="text-right"><input type="text" name="product_image[<?php echo $image_row; ?>][sort_order]" value="<?php echo $product_image['sort_order']; ?>" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>
+                      <td class="text-right"><input type="text" name="product_image[<?php echo $image_row; ?>][text]" value="<?php echo $product_image['text']; ?>" placeholder="Описание к фото" class="form-control" /></td>
                       <td class="text-left"><button type="button" onclick="$('#image-row<?php echo $image_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                     </tr>
                     <?php $image_row++; ?>
@@ -1360,6 +1362,7 @@ function addImage() {
 	html  = '<tr id="image-row' + image_row + '">';
 	html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="<?php echo $placeholder; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
 	html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+	html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][text]" value="" placeholder="Описание к фото" class="form-control" /></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';
 

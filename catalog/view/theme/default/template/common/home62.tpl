@@ -2,6 +2,9 @@
 	.webp .s-calc {
 		background-image: url(<?php echo $product['image']; ?>);
 	}
+	.custom-select-container {
+		width: 50% !important;
+	}
 </style>
 <section class="section s-calc" id="calc">
   <div class="container">
@@ -17,8 +20,8 @@
               <div class="form-row-title__text">Введите данные</div>
             </div>
             <div class="form__group form__group--inline">
-              <input class="form__control" type="text" name="gasoline-consumption" value="20" placeholder="Расход бензина на 100 км" required>
-              <input class="form__control" type="text" name="mileage" value="5000" placeholder="Пробег автомобиля за год" required>
+              <input class="form__control" type="text" name="gasoline-consumption" value="" placeholder="Расход бензина на 100 км" required>
+              <input class="form__control" type="text" name="mileage" value="" placeholder="Пробег автомобиля за год" required>
             </div>
           </div>
 					
@@ -28,8 +31,8 @@
               <div class="form-row-title__text">Выберите цену на топливо</div>
             </div>
 						<div class="form__group form__group--inline">
-              <input class="form__control" type="text" name="gas-price" value="12" placeholder="цена за 1л газа" required>
-              <input class="form__control" type="text" name="gasoline-price" value="28" placeholder="цена 1л бензина" required>
+              <input class="form__control" type="text" name="gas-price" value="" placeholder="цена за 1л газа" required>
+              <input class="form__control" type="text" name="gasoline-price" value="" placeholder="цена 1л бензина" required>
             </div>
           </div>
 					
@@ -39,7 +42,7 @@
               <div class="form-row-title__text">Стоимость оборудования с установкой</div>
             </div>
             <div class="form__group form__group--inline">
-              <select class="custom-select js-custom-select" name="cylinders" required>
+              <select class="form__control custom-select js-custom-select" name="lpg_ustanovka" required>
 								<?php foreach($product['attribute_groups'] as $attribute_groups){ ?>
 								<?php foreach($attribute_groups['attribute'] as $attribute){ ?>
 								<?php $text = explode(';', $attribute['text']); ?>
@@ -47,6 +50,7 @@
 								<?php } ?>
 								<?php } ?>
               </select>
+							<input class="form__control" type="text" name="lpg_ustanovka_price" value="" placeholder="Можно ввести свою стоимость руб" >
             </div>
           </div>
           <div class="form__row">
@@ -55,6 +59,14 @@
         </form>
       </div>
 			<script>
+			
+				$(document).on('click', '.custom-select-container', function(){
+					setTimeout(function(){
+						
+						var total = parseInt($('select[name="lpg_ustanovka"]').val());
+						$('input[name="lpg_ustanovka_price"]').val(total);
+						},300);
+				});
 				$(document).on('click', '.js-calc', function(){
 					
 					//debugger;
@@ -65,8 +77,14 @@
 					var gas_price = parseInt($('input[name="gas-price"]').val());	
 					var gasoline_price = parseInt($('input[name="gasoline-price"]').val());
 					
-					var total = parseInt($('select[name="cylinders"]').val());
-					var total_text = $('select[name="cylinders"] option:selected').text();
+					var total = parseInt($('select[name="lpg_ustanovka"]').val());
+					var lpg_ustanovka_price = parseInt($('input[name="lpg_ustanovka_price"]').val());
+					var total_text = $('select[name="lpg_ustanovka"] option:selected').text();
+					
+					if(lpg_ustanovka_price > 0 ){
+						total = lpg_ustanovka_price;
+					}
+					
 					
 					var benzin = (mileage/100*rashod_b*gasoline_price);
 					var gaz = (mileage/100*(rashod_b*1.15)*gas_price);
