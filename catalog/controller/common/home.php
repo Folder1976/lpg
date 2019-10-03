@@ -25,12 +25,20 @@ class ControllerCommonHome extends Controller {
 		$this->load->model('catalog/product');
 		$this->load->model('tool/image');
 		
+		$results = $this->model_catalog_category->getCategories(0);
+		$categories_id = array();
+		foreach ($results as $result) {
+			$categories_id[] = $result['category_id'];	
+		}
+		
+		
 		$data['products'] = array();
 
 		$filter_data = array(
 			'filter_category_id' => 0,
 			'sort'               => 'sort_order',
 			'order'              => 'ASC',
+			'filter_category_id'	=> implode(',',$categories_id),
 			'start'              => 0,
 			'limit'              => 100
 		);
@@ -113,7 +121,8 @@ class ControllerCommonHome extends Controller {
 			
 		}
 	
-		
+		//echo "<pre>";print_r(var_dump($data['products']));echo "</pre>";
+		//die();
 		
 		
 		
