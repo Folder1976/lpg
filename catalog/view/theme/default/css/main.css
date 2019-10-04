@@ -3238,8 +3238,8 @@ a.bbtn--white:hover {
 
 .galery-list-item {
   margin: 0 10px 10px;
-  width: -webkit-calc(50% - 20px);
-  width: calc(50% - 20px);
+  width: -webkit-calc(100% / 6 - 20px);
+  width: calc(100% / 6 - 20px);
 }
 
 .galery-list-item__link {
@@ -3543,6 +3543,11 @@ body[class*="product-product-"] .site__content {
   .s-contact-info__content p {
     font-size: 14px;
   }
+
+  .galery-list-item {
+    width: -webkit-calc(25% - 20px);
+    width: calc(25% - 20px);
+  }
 }
 
 @media screen and (max-width: 1250px) {
@@ -3844,6 +3849,11 @@ body[class*="product-product-"] .site__content {
 
   .s-reviews__content {
     margin-right: auto;
+  }
+
+  .galery-list-item {
+    width: -webkit-calc(50% - 20px);
+    width: calc(50% - 20px);
   }
 }
 

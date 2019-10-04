@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 
-<?php if ($products) { ?>
+<?php if ($categories) { ?>
   <section class="section s-galery-list">
     <div class="container">
       <h2 class="section-title"><?php echo $heading_title; ?></h2>
@@ -9,13 +9,13 @@
     </div>
     <div class="container">
       <ul class="galery-list">
-      <?php foreach ($products as $product) { ?>
+      <?php foreach ($categories as $category) { ?>
         <li class="galery-list-item">
-          <a href="<?php echo $product['href']; ?>" class="galery-list-item__link">
+          <a href="<?php echo $category['href']; ?>" class="galery-list-item__link">
             <div class="galery-list-item__foto">
-              <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="lazyloaded img-responsive" />
+              <img src="<?php echo $category['thumb']; ?>" alt="<?php echo $category['name']; ?>" title="<?php echo $category['name']; ?>" class="lazyloaded img-responsive" />
             </div>
-            <div class="galery-list-item__title"><?php echo $product['name']; ?></div>
+            <div class="galery-list-item__title"><?php echo $category['name']; ?></div>
           </a>
         </li>
       <?php } ?>
@@ -28,9 +28,6 @@
     </div>
   </section>
 <?php } ?>
-
-
-
 
 
 
