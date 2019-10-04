@@ -191,8 +191,10 @@ hr {
 @import './sections/_reviews';
 @import './sections/_recommend';
 @import './sections/_contact';
+@import './sections/_galery-list';
 
 /******************** СТРАНИЦЫ ********************/
 // Главная страница
 @import './pages/index/_index';
+@import './pages/_category-page';
 

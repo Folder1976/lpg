@@ -1,4 +1,49 @@
 <?php echo $header; ?>
+
+<?php if ($products) { ?>
+  <section class="section s-galery-list">
+    <div class="container">
+      <h2 class="section-title"><?php echo $heading_title; ?></h2>
+      <hr>
+      <br>
+    </div>
+    <div class="container">
+      <ul class="galery-list">
+      <?php foreach ($products as $product) { ?>
+        <li class="galery-list-item">
+          <a href="<?php echo $product['href']; ?>" class="galery-list-item__link">
+            <div class="galery-list-item__foto">
+              <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="lazyloaded img-responsive" />
+            </div>
+            <div class="galery-list-item__title"><?php echo $product['name']; ?></div>
+          </a>
+        </li>
+      <?php } ?>
+      </ul>
+
+    <?php echo $pagination; ?>
+
+    <?php echo $results; ?>
+
+    </div>
+  </section>
+<?php } ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if (false) { ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -151,4 +196,8 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<?php } ?>
+
+
+
 <?php echo $footer; ?>

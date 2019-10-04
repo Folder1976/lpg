@@ -1,0 +1,41 @@
+.s-galery-list {}
+
+.galery-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -10px;
+}
+
+.galery-list-item {
+  margin: 0 10px 10px;
+  width: calc(50% - 20px);
+
+  @media screen and (max-width: $break_xs) {
+    width: 100%;
+  }
+
+  &__link {
+    border: 1px solid transparent;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $primary_color;
+    }
+  }
+
+  &__foto {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @extend %font-size-28-lg20;
+    padding: 20px;
+    text-decoration: none;
+    color: #000;
+  }
+}

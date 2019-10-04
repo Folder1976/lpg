@@ -35,6 +35,10 @@
     line-height: 1.35em;
   }
 
+  @media screen and (max-width: $break_xs) {
+    font-size: 35px;
+  }
+
   span {
     color: $primary_color;
   }
