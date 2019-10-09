@@ -21,9 +21,29 @@
       <?php } ?>
       </ul>
 
-    <?php echo $pagination; ?>
+    </div>
+  </section>
+<?php } ?>
 
-    <?php echo $results; ?>
+<?php if ($products) { ?>
+  <section class="section s-galery-list">
+    <div class="container">
+      <br>
+      <br>
+    </div>
+    <div class="container">
+      <ul class="galery-list">
+      <?php foreach ($products as $product) { ?>
+        <li class="galery-list-item">
+          <a href="<?php echo $product['href']; ?>" class="galery-list-item__link">
+            <div class="galery-list-item__foto">
+              <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="lazyloaded img-responsive" />
+            </div>
+            <div class="galery-list-item__title"><?php echo $product['name']; ?></div>
+          </a>
+        </li>
+      <?php } ?>
+      </ul>
 
     </div>
   </section>

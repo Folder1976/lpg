@@ -3,7 +3,7 @@
 .galery-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
   margin: 0 -10px;
 }
 
@@ -11,7 +11,7 @@
   margin: 0 10px 10px;
   width: calc(100% / 6 - 20px);
 
-  @media screen and (max-width: $break_lg) {
+  @media screen and (max-width: $break_md) {
     width: calc(25% - 20px);
   }
 
@@ -41,7 +41,8 @@
   }
 
   &__title {
-    @extend %font-size-28-lg20;
+    // @extend %font-size-28-lg20;
+    font-size: 18px;
     padding: 20px;
     text-decoration: none;
     color: #000;
