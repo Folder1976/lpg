@@ -27,6 +27,7 @@
           <div class="s-top__copy">Интергассервис, 2019</div>
         </div>
         <div class="s-top-bottom__right">
+          <?php if (false) { ?>
           <div class="s-top__social social"><a class="social__link" href="#">
               <svg class="icon icon-facebook social__icon">
                 <use xlink:href="catalog/view/theme/default/img/sprite/symbol/sprite.svg#facebook"></use>
@@ -37,6 +38,7 @@
               <svg class="icon icon-youtube social__icon">
                 <use xlink:href="catalog/view/theme/default/img/sprite/symbol/sprite.svg#youtube"></use>
               </svg></a></div>
+          <?php } ?>
           <div class="s-top__copy2">Разработано студией</div>
         </div>
       </div>

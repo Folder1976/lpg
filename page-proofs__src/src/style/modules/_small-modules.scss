@@ -1,6 +1,11 @@
 .logo {
   &__link {}
-  &__img {}
+  &__img {
+    max-height: 50px;
+  }
+}
+.logo__link + .logo__link {
+  margin-left: 10px;
 }
 
 .back-to-top {

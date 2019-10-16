@@ -48,6 +48,9 @@
 
 .header__logo {
   max-width: calc(100vw - 205px);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 
   @media screen and (max-width: $break_hide-menu) {
     position: relative;
@@ -156,6 +159,7 @@
     line-height: 22px;
     color: #000;
     text-decoration: none;
+    white-space: nowrap;
 
     @media screen and (max-width: $break_lg) {
       font-size: 14px;

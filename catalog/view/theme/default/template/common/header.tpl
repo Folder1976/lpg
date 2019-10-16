@@ -65,9 +65,8 @@
               </picture>
             </a>
           </div>
-          
-          
-          ALPHA-LOGO.png
+
+
           <div class="header__right">
             <nav class="header__menu header-menu">
               <ul class="menu header-menu__menu" id="menu">
