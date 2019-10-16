@@ -53,10 +53,21 @@
     <header class="site__header header is-fixed">
       <div class="container">
         <div class="header__inner">
-          <div class="header__logo logo"><a class="logo__link" href="/">
+          <div class="header__logo logo">
+            <a class="logo__link" href="/">
               <picture>
-                <source srcset="/image/catalog/logo-366.png" media="(max-width: 366px)"><img class="logo__img" src="<?php echo $logo; ?>" alt="Интергазсервис">
-              </picture></a></div>
+                <source srcset="/image/catalog/logo-366.png" media="(max-height: 366px)"><img class="logo__img" src="<?php echo $logo; ?>" alt="Интергазсервис">
+              </picture>
+            </a>
+            <a class="logo__link" href="/">
+              <picture>
+                <source srcset="/image/ALPHA-LOGO.png" media="(max-width: 366px)"><img class="logo__img" src="/image/ALPHA-LOGO.png" alt="Интергазсервис">
+              </picture>
+            </a>
+          </div>
+          
+          
+          ALPHA-LOGO.png
           <div class="header__right">
             <nav class="header__menu header-menu">
               <ul class="menu header-menu__menu" id="menu">

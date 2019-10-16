@@ -20,13 +20,25 @@
       </div>
       <div class="recommend-slider__content col-6 wow fadeInUp">
         <div class="recommend-slider__text-list">
+          
+      <?php $link = '/'; ?>
 			<?php foreach($product as $prod){ ?>
 			<?php if(is_array($prod)){?>
 				<div class="recommend-slider__text-slide recommend-slider-text-slide" data-nav-label="<?php echo $prod['name']; ?>">
 				  <div class="recommend-slider-text-slide__title"><?php echo $prod['meta_title']; ?></div>
 				  <div class="recommend-slider-text-slide__text"><?php echo $prod['description']; ?></div>
 				</div>
-			<?php } ?>
+			
+            
+          	<?php foreach($prod['attribute_groups'] as $attribute_groups){ ?>
+            <?php foreach($attribute_groups['attribute'] as $attribute){ ?>
+            <?php if(trim($attribute['text']) != '') $link = trim($attribute['text']); ?>
+            <?php } ?>
+            <?php } ?>
+     
+      
+      
+      <?php } ?>
 			<?php } ?>
         </div>
         <div class="recommend-slider__arrows">
@@ -39,7 +51,9 @@
             <svg class="icon icon-arrow-right recommend-slider__arrow-icon">
               <use xlink:href="catalog/view/theme/default/img/sprite/symbol/sprite.svg#arrow-right"></use>
             </svg>
-          </div><a class="recommend-slider__download-btn bbtn" href="#">Скачать прайс</a>
+          </div>
+          
+          <a class="recommend-slider__download-btn bbtn" href="<?php echo $link; ?>" target="_blank">Скачать прайс</a>
         </div>
       </div>
     </div>

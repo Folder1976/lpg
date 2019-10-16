@@ -28,7 +28,15 @@
 			?>
 			
 			<div class="reviews-slide">
-			  <div class="reviews-slide__name"><?php echo $texts[0]; unset($texts[0]); ?></div>
+        <div class="reviews-slide__header">
+          <div class="reviews-slide__foto">
+            <img src="catalog/view/theme/default/img/foto/client-150x150.jpg" alt="<?php echo $texts[0]; ?>">
+          </div>
+          <div class="reviews-slide__info">
+            <div class="reviews-slide__name"><?php echo $texts[0]; unset($texts[0]); ?></div>
+            <div class="reviews-slide__sity">Город</div>
+          </div>
+        </div>
 			  <div class="reviews-slide__title"><?php echo $texts[1]; unset($texts[1]); ?></div>
 			  <div class="reviews-slide__text">
 				<?php foreach($texts as $text){ ?>				
