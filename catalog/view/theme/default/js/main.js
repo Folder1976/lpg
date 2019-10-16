@@ -130,7 +130,7 @@ $('.js-reviews-slider').each(function(idx){
     nextArrow: '#' + sId + ' .' + nameS + '__arrow--next',
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 2000,
   });
 });

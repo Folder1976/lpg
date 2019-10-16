@@ -36,6 +36,20 @@
 
 .reviews-slide {
 
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__foto {
+    width: 150px;
+    height: 150px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+
+  &__info {}
+
   &__name {
     @extend %font-size-40-lg28;
     font-weight: 700;
@@ -47,10 +61,20 @@
     }
   }
 
+  &__sity {
+    @extend %font-size-28-lg20;
+
+    @media screen and (max-width: $break_xs) {
+      font-size: 18px;
+    }
+  }
+
+
   &__title {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.56em;
+    margin-top: 15px;
 
     @media screen and (max-width: $break_lg) {
       font-size: 14px;

@@ -26,6 +26,41 @@ setcookie('IdProduto',$array_produtos,time() + 34560000, "/");
 }
 }
 ?>
+
+
+  <section class="section s-galery-list">
+    <div class="container">
+      <h2 class="section-title"><?php echo $heading_title; ?></h2>
+      <hr>
+      <br>
+    </div>
+    <div class="container">
+      <?php if ($images) { ?>
+      <ul class="galery-list">
+      <?php foreach ($images as $image) { ?>
+        <li class="galery-list-item">
+          <a class="galery-list-item__link">
+            <div class="galery-list-item__foto">
+              <img src="<?php echo $image['thumb']; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="lazyloaded js-zoom-foto-bf img-responsive" data-big-foto="<?php echo $image['popup']; ?>"/>
+            </div>
+            <div class="galery-list-item__title"><?php echo $image['text']; ?></div>
+          </a>
+        </li>
+      <?php } ?>
+      </ul>
+      <?php } ?>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+<?php if (false) {// ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -618,4 +653,8 @@ $(document).ready(function() {
 	});
 });
 //--></script>
+<?php } ?>
+
+
+
 <?php echo $footer; ?>

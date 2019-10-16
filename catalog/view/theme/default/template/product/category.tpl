@@ -1,4 +1,66 @@
 <?php echo $header; ?>
+
+<?php if ($categories) { ?>
+  <section class="section s-galery-list">
+    <div class="container">
+      <h2 class="section-title"><?php echo $heading_title; ?></h2>
+      <hr>
+      <br>
+    </div>
+    <div class="container">
+      <ul class="galery-list">
+      <?php foreach ($categories as $category) { ?>
+        <li class="galery-list-item">
+          <a href="<?php echo $category['href']; ?>" class="galery-list-item__link">
+            <div class="galery-list-item__foto">
+              <img src="<?php echo $category['thumb']; ?>" alt="<?php echo $category['name']; ?>" title="<?php echo $category['name']; ?>" class="lazyloaded img-responsive" />
+            </div>
+            <div class="galery-list-item__title"><?php echo $category['name']; ?></div>
+          </a>
+        </li>
+      <?php } ?>
+      </ul>
+
+    </div>
+  </section>
+<?php } ?>
+
+<?php if ($products) { ?>
+  <section class="section s-galery-list">
+    <div class="container">
+      <br>
+      <br>
+    </div>
+    <div class="container">
+      <ul class="galery-list">
+      <?php foreach ($products as $product) { ?>
+        <li class="galery-list-item">
+          <a href="<?php echo $product['href']; ?>" class="galery-list-item__link">
+            <div class="galery-list-item__foto">
+              <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="lazyloaded img-responsive" />
+            </div>
+            <div class="galery-list-item__title"><?php echo $product['name']; ?></div>
+          </a>
+        </li>
+      <?php } ?>
+      </ul>
+
+    </div>
+  </section>
+<?php } ?>
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if (false) { ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -151,4 +213,8 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<?php } ?>
+
+
+
 <?php echo $footer; ?>
